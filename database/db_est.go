@@ -3,7 +3,7 @@ package database
 import (
 	"context"
 
-	"github.com/dapplink-labs/multichain-sync-sol/config"
+	"github.com/Gavine-Gao/blockchain-sync-sol/config"
 )
 
 func SetupDb() *DB {

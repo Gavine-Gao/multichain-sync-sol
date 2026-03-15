@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/dapplink-labs/multichain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
 )
 
 type TransactionChannel struct {
@@ -22,6 +22,8 @@ type TransactionChannel struct {
 	TxType          database.TransactionType
 	ContractAddress string
 }
+
+// ==================== 交易 ChannelBank（流式） ====================
 
 type txMinHeap []TransactionChannel
 
@@ -44,22 +46,22 @@ func (h *txMinHeap) Pop() interface{} {
 }
 
 type ChannelBank struct {
-	inputCh  chan TransactionChannel
-	outputCh chan TransactionChannel
-	buffer   txMinHeap
-	mu       sync.Mutex
-	cond     *sync.Cond
-	closed   bool
+	inputCh      chan TransactionChannel
+	outputCh     chan TransactionChannel
+	buffer       txMinHeap
+	mu           sync.Mutex
+	nextExpected uint64 // 期望的下一个区块号
 }
 
-// NewChannelBank 创建一个新的 ChannelBank 实例
-func NewChannelBank(bufferSize int) *ChannelBank {
+// NewChannelBank 创建流式 ChannelBank
+// startBlock: 期望的起始区块号，sorter 会从这个区块号开始有序输出
+func NewChannelBank(bufferSize int, startBlock uint64) *ChannelBank {
 	cb := &ChannelBank{
-		inputCh:  make(chan TransactionChannel, bufferSize),
-		outputCh: make(chan TransactionChannel, bufferSize),
-		buffer:   make(txMinHeap, 0),
+		inputCh:      make(chan TransactionChannel, bufferSize),
+		outputCh:     make(chan TransactionChannel, bufferSize),
+		buffer:       make(txMinHeap, 0),
+		nextExpected: startBlock,
 	}
-	cb.cond = sync.NewCond(&cb.mu)
 	go cb.sorter()
 	return cb
 }
@@ -73,52 +75,54 @@ func (cb *ChannelBank) Channel() <-chan TransactionChannel {
 }
 
 func (cb *ChannelBank) Close() {
-	cb.mu.Lock()
-	cb.closed = true
 	close(cb.inputCh)
-	cb.cond.Broadcast()
-	cb.mu.Unlock()
 }
 
+// sorter 流式排序：边收边输出
+// 每次收到新数据入堆后，循环检查堆顶是否 == nextExpected，
+// 是则立刻 Pop 输出，nextExpected++，继续检查（连续区块会连续输出）
 func (cb *ChannelBank) sorter() {
-	for {
+	for tx := range cb.inputCh {
 		cb.mu.Lock()
-	LOOP:
-		for {
-			select {
-			case tx, ok := <-cb.inputCh:
-				if !ok {
-					break LOOP
-				}
-				heap.Push(&cb.buffer, tx)
-				cb.cond.Signal()
-			default:
-				break LOOP
-			}
-		}
+		heap.Push(&cb.buffer, tx)
 
-		if len(cb.buffer) > 0 {
-			tx := heap.Pop(&cb.buffer).(TransactionChannel)
-			cb.mu.Unlock()
-			cb.outputCh <- tx
-		} else {
-			if cb.closed {
+		// 尝试输出所有连续的区块交易
+		for len(cb.buffer) > 0 {
+			top := cb.buffer[0]
+			topBlock := top.BlockNumber.Uint64()
+
+			if topBlock == cb.nextExpected || topBlock < cb.nextExpected {
+				// 当前区块或更早的区块（同区块多笔交易），直接输出
+				item := heap.Pop(&cb.buffer).(TransactionChannel)
 				cb.mu.Unlock()
+				cb.outputCh <- item
+				cb.mu.Lock()
+
+				// 检查堆里下一个是否还是同一个区块，不是才递增
+				if len(cb.buffer) == 0 || cb.buffer[0].BlockNumber.Uint64() > cb.nextExpected {
+					cb.nextExpected++
+				}
+			} else {
+				// 堆顶超过期望区块号，等更多数据
 				break
 			}
-			cb.cond.Wait()
-			cb.mu.Unlock()
 		}
+		cb.mu.Unlock()
 	}
 
+	// inputCh 关闭后，把堆里剩余的数据全部按序输出
 	cb.mu.Lock()
 	for len(cb.buffer) > 0 {
 		tx := heap.Pop(&cb.buffer).(TransactionChannel)
+		cb.mu.Unlock()
 		cb.outputCh <- tx
+		cb.mu.Lock()
 	}
 	cb.mu.Unlock()
 	close(cb.outputCh)
 }
+
+// ==================== 区块头 BlockHeaderBank（流式） ====================
 
 type BlockHeader struct {
 	Number     *big.Int
@@ -148,21 +152,20 @@ func (h *bhMinHeap) Pop() interface{} {
 }
 
 type BlockHeaderBank struct {
-	inputCh  chan BlockHeader
-	outputCh chan BlockHeader
-	buffer   bhMinHeap
-	mu       sync.Mutex
-	cond     *sync.Cond
-	closed   bool
+	inputCh      chan BlockHeader
+	outputCh     chan BlockHeader
+	buffer       bhMinHeap
+	mu           sync.Mutex
+	nextExpected uint64
 }
 
-func NewBlockHeaderBank(bufferSize int) *BlockHeaderBank {
+func NewBlockHeaderBank(bufferSize int, startBlock uint64) *BlockHeaderBank {
 	bhb := &BlockHeaderBank{
-		inputCh:  make(chan BlockHeader, bufferSize),
-		outputCh: make(chan BlockHeader, bufferSize),
-		buffer:   make(bhMinHeap, 0),
+		inputCh:      make(chan BlockHeader, bufferSize),
+		outputCh:     make(chan BlockHeader, bufferSize),
+		buffer:       make(bhMinHeap, 0),
+		nextExpected: startBlock,
 	}
-	bhb.cond = sync.NewCond(&bhb.mu)
 	go bhb.sorter()
 	return bhb
 }
@@ -176,48 +179,36 @@ func (bhb *BlockHeaderBank) Channel() <-chan BlockHeader {
 }
 
 func (bhb *BlockHeaderBank) Close() {
-	bhb.mu.Lock()
-	bhb.closed = true
 	close(bhb.inputCh)
-	bhb.cond.Broadcast()
-	bhb.mu.Unlock()
 }
 
+// sorter 流式排序（与 ChannelBank 相同逻辑）
 func (bhb *BlockHeaderBank) sorter() {
-	for {
+	for bh := range bhb.inputCh {
 		bhb.mu.Lock()
-	LOOP:
-		for {
-			select {
-			case bh, ok := <-bhb.inputCh:
-				if !ok {
-					break LOOP
-				}
-				heap.Push(&bhb.buffer, bh)
-				bhb.cond.Signal()
-			default:
-				break LOOP
-			}
-		}
+		heap.Push(&bhb.buffer, bh)
 
-		if len(bhb.buffer) > 0 {
-			bh := heap.Pop(&bhb.buffer).(BlockHeader)
-			bhb.mu.Unlock()
-			bhb.outputCh <- bh
-		} else {
-			if bhb.closed {
+		for len(bhb.buffer) > 0 {
+			top := bhb.buffer[0]
+			if top.Number.Uint64() == bhb.nextExpected {
+				item := heap.Pop(&bhb.buffer).(BlockHeader)
 				bhb.mu.Unlock()
+				bhb.outputCh <- item
+				bhb.mu.Lock()
+				bhb.nextExpected++
+			} else {
 				break
 			}
-			bhb.cond.Wait()
-			bhb.mu.Unlock()
 		}
+		bhb.mu.Unlock()
 	}
 
 	bhb.mu.Lock()
 	for len(bhb.buffer) > 0 {
 		bh := heap.Pop(&bhb.buffer).(BlockHeader)
+		bhb.mu.Unlock()
 		bhb.outputCh <- bh
+		bhb.mu.Lock()
 	}
 	bhb.mu.Unlock()
 	close(bhb.outputCh)

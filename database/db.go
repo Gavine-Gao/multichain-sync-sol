@@ -13,9 +13,9 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 
-	retry2 "github.com/dapplink-labs/multichain-sync-sol/common/retry"
-	"github.com/dapplink-labs/multichain-sync-sol/config"
-	_ "github.com/dapplink-labs/multichain-sync-sol/database/utils/serializers"
+	retry2 "github.com/Gavine-Gao/blockchain-sync-sol/common/retry"
+	"github.com/Gavine-Gao/blockchain-sync-sol/config"
+	_ "github.com/Gavine-Gao/blockchain-sync-sol/database/utils/serializers"
 )
 
 type DB struct {

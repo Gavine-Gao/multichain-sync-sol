@@ -6,7 +6,7 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient"
 )
 
 type ReorgBlocks struct {

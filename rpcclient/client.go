@@ -7,8 +7,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/account"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/common"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/account"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/common"
 )
 
 type WalletChainAccountClient struct {

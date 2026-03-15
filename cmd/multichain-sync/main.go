@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"github.com/dapplink-labs/multichain-sync-sol/common/opio"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/opio"
 	"os"
 
 	"github.com/ethereum/go-ethereum/log"

@@ -10,7 +10,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/dapplink-labs/multichain-sync-sol/common/bigint"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/bigint"
 )
 
 type Deposits struct {

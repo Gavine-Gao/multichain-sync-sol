@@ -10,26 +10,24 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/google/uuid"
 
-	"github.com/dapplink-labs/multichain-sync-sol/common/json2"
-	"github.com/dapplink-labs/multichain-sync-sol/database"
-	"github.com/dapplink-labs/multichain-sync-sol/database/dynamic"
-	dal_wallet_go "github.com/dapplink-labs/multichain-sync-sol/protobuf/dal-wallet-go"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/account"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/json2"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database/dynamic"
+	dal_wallet_go "github.com/Gavine-Gao/blockchain-sync-sol/protobuf/dal-wallet-go"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/account"
 )
 
 const (
-	ChainName = "Ethereum"
-	Network   = "mainnet"
+	Network = "mainnet"
 )
 
 var (
-	EthGasLimit   uint64 = 60000
-	TokenGasLimit uint64 = 120000
-	Min1Gwei      uint64 = 1000000000
+	NativeGasLimit uint64 = 60000
+	TokenGasLimit  uint64 = 120000
+	Min1Gwei       uint64 = 1000000000
 	//maxFeePerGas                = "135177480"
 	//maxPriorityFeePerGas        = "535177480"
 )
@@ -85,7 +83,7 @@ func (bws *BusinessMiddleWireServices) ExportAddressesByPublicKeys(ctx context.C
 
 		dbAddress := &database.Addresses{
 			GUID:        uuid.New(),
-			Address:     common.HexToAddress(address),
+			Address:     address,
 			AddressType: parseAddressType,
 			PublicKey:   value.PublicKey,
 			Timestamp:   uint64(time.Now().Unix()),
@@ -94,8 +92,8 @@ func (bws *BusinessMiddleWireServices) ExportAddressesByPublicKeys(ctx context.C
 
 		balanceItem := &database.Balances{
 			GUID:         uuid.New(),
-			Address:      common.HexToAddress(address),
-			TokenAddress: common.Address{},
+			Address:      address,
+			TokenAddress: "",
 			AddressType:  parseAddressType,
 			Balance:      big.NewInt(0),
 			LockBalance:  big.NewInt(0),
@@ -192,7 +190,7 @@ func (bws *BusinessMiddleWireServices) BuildUnSignTransaction(ctx context.Contex
 	log.Info("BusinessMiddleWireServices CreateUnSignTransaction dynamicFeeTxReq", json2.ToJSONString(dynamicFeeTxReq))
 	base64Str := base64.StdEncoding.EncodeToString(data)
 	unsignTx := &account.UnSignTransactionRequest{
-		Chain:    ChainName,
+		Chain:    bws.accountClient.ChainName,
 		Network:  Network,
 		Base64Tx: base64Str,
 	}
@@ -241,10 +239,10 @@ func (bws *BusinessMiddleWireServices) BuildSignedTransaction(ctx context.Contex
 			response.Msg = "Deposit transaction not found"
 			return response, nil
 		}
-		fromAddress = tx.FromAddress.String()
-		toAddress = tx.ToAddress.String()
+		fromAddress = tx.FromAddress
+		toAddress = tx.ToAddress
 		amount = tx.Amount.String()
-		tokenAddress = tx.TokenAddress.String()
+		tokenAddress = tx.TokenAddress
 		gasLimit = tx.GasLimit
 		maxFeePerGas = tx.MaxFeePerGas
 		maxPriorityFeePerGas = tx.MaxPriorityFeePerGas
@@ -258,10 +256,10 @@ func (bws *BusinessMiddleWireServices) BuildSignedTransaction(ctx context.Contex
 			response.Msg = "Withdraw transaction not found"
 			return response, nil
 		}
-		fromAddress = tx.FromAddress.String()
-		toAddress = tx.ToAddress.String()
+		fromAddress = tx.FromAddress
+		toAddress = tx.ToAddress
 		amount = tx.Amount.String()
-		tokenAddress = tx.TokenAddress.String()
+		tokenAddress = tx.TokenAddress
 		gasLimit = tx.GasLimit
 		maxFeePerGas = tx.MaxFeePerGas
 		maxPriorityFeePerGas = tx.MaxPriorityFeePerGas
@@ -275,10 +273,10 @@ func (bws *BusinessMiddleWireServices) BuildSignedTransaction(ctx context.Contex
 			response.Msg = "Internal transaction not found"
 			return response, nil
 		}
-		fromAddress = tx.FromAddress.String()
-		toAddress = tx.ToAddress.String()
+		fromAddress = tx.FromAddress
+		toAddress = tx.ToAddress
 		amount = tx.Amount.String()
-		tokenAddress = tx.TokenAddress.String()
+		tokenAddress = tx.TokenAddress
 		gasLimit = tx.GasLimit
 		maxFeePerGas = tx.MaxFeePerGas
 		maxPriorityFeePerGas = tx.MaxPriorityFeePerGas
@@ -312,7 +310,7 @@ func (bws *BusinessMiddleWireServices) BuildSignedTransaction(ctx context.Contex
 	data := json2.ToJSON(dynamicFeeTx)
 	base64Str := base64.StdEncoding.EncodeToString(data)
 	signedTxReq := &account.SignedTransactionRequest{
-		Chain:     ChainName,
+		Chain:     bws.accountClient.ChainName,
 		Network:   Network,
 		Signature: request.Signature,
 		Base64Tx:  base64Str,
@@ -359,7 +357,7 @@ func (bws *BusinessMiddleWireServices) SetTokenAddress(ctx context.Context, requ
 		ColdAmountBigInt, _ := new(big.Int).SetString(value.ColdAmount, 10)
 		token := database.Tokens{
 			GUID:          uuid.New(),
-			TokenAddress:  common.HexToAddress(value.Address),
+			TokenAddress:  value.Address,
 			Decimals:      uint8(value.Decimals),
 			TokenName:     value.TokenName,
 			CollectAmount: CollectAmountBigInt,
@@ -461,15 +459,15 @@ func validateRequest(request *dal_wallet_go.UnSignTransactionRequest) error {
 
 func determineTokenType(contractAddress string) database.TokenType {
 	if contractAddress == "0x00" {
-		return database.TokenTypeETH
+		return database.TokenTypeNative
 	}
 	// 这里可以添加更多的 token 类型判断逻辑
-	return database.TokenTypeERC20
+	return database.TokenTypeToken
 }
 
 func (bws *BusinessMiddleWireServices) getAccountNonce(ctx context.Context, address string) (int, error) {
 	accountReq := &account.AccountRequest{
-		Chain:           ChainName,
+		Chain:           bws.accountClient.ChainName,
 		Network:         Network,
 		Address:         address,
 		ContractAddress: "0x00",
@@ -485,7 +483,7 @@ func (bws *BusinessMiddleWireServices) getAccountNonce(ctx context.Context, addr
 
 func (bws *BusinessMiddleWireServices) getFeeInfo(ctx context.Context, address string) (*FeeInfo, error) {
 	accountFeeReq := &account.FeeRequest{
-		Chain:   ChainName,
+		Chain:   bws.accountClient.ChainName,
 		Network: Network,
 		RawTx:   "",
 		Address: address,
@@ -501,7 +499,7 @@ func (bws *BusinessMiddleWireServices) getFeeInfo(ctx context.Context, address s
 
 func (bws *BusinessMiddleWireServices) getGasAndContractInfo(contractAddress string) (uint64, string) {
 	if contractAddress == "0x00" {
-		return EthGasLimit, "0x00"
+		return NativeGasLimit, "0x00"
 	}
 	return TokenGasLimit, contractAddress
 }
@@ -513,18 +511,18 @@ func (bws *BusinessMiddleWireServices) storeWithdraw(request *dal_wallet_go.UnSi
 		GUID:                 transactionId,
 		Timestamp:            uint64(time.Now().Unix()),
 		Status:               database.TxStatusCreateUnsigned,
-		BlockHash:            common.Hash{},
+		BlockHash:            "",
 		BlockNumber:          big.NewInt(1),
-		TxHash:               common.Hash{},
+		TxHash:               "",
 		TxType:               transactionType,
-		FromAddress:          common.HexToAddress(request.From),
-		ToAddress:            common.HexToAddress(request.To),
+		FromAddress:          request.From,
+		ToAddress:            request.To,
 		Amount:               amountBig,
 		GasLimit:             gasLimit,
 		MaxFeePerGas:         feeInfo.MaxPriorityFee.String(),
 		MaxPriorityFeePerGas: feeInfo.MultipliedTip.String(),
 		TokenType:            determineTokenType(request.ContractAddress),
-		TokenAddress:         common.HexToAddress(request.ContractAddress),
+		TokenAddress:         request.ContractAddress,
 		TokenId:              request.TokenId,
 		TokenMeta:            request.TokenMeta,
 		TxSignHex:            "",
@@ -541,18 +539,18 @@ func (bws *BusinessMiddleWireServices) storeInternal(request *dal_wallet_go.UnSi
 		GUID:                 transactionId,
 		Timestamp:            uint64(time.Now().Unix()),
 		Status:               database.TxStatusCreateUnsigned,
-		BlockHash:            common.Hash{},
+		BlockHash:            "",
 		BlockNumber:          big.NewInt(1),
-		TxHash:               common.Hash{},
+		TxHash:               "",
 		TxType:               transactionType,
-		FromAddress:          common.HexToAddress(request.From),
-		ToAddress:            common.HexToAddress(request.To),
+		FromAddress:          request.From,
+		ToAddress:            request.To,
 		Amount:               amountBig,
 		GasLimit:             gasLimit,
 		MaxFeePerGas:         feeInfo.MaxPriorityFee.String(),
 		MaxPriorityFeePerGas: feeInfo.MultipliedTip.String(),
 		TokenType:            determineTokenType(request.ContractAddress),
-		TokenAddress:         common.HexToAddress(request.ContractAddress),
+		TokenAddress:         request.ContractAddress,
 		TokenId:              request.TokenId,
 		TokenMeta:            request.TokenMeta,
 		TxSignHex:            "",
@@ -570,18 +568,18 @@ func (bws *BusinessMiddleWireServices) StoreDeposits(ctx context.Context,
 		Timestamp:            uint64(time.Now().Unix()),
 		Status:               database.TxStatusCreateUnsigned,
 		Confirms:             0,
-		BlockHash:            common.Hash{},
+		BlockHash:            "",
 		BlockNumber:          big.NewInt(1),
-		TxHash:               common.Hash{},
+		TxHash:               "",
 		TxType:               transactionType,
-		FromAddress:          common.HexToAddress(depositsRequest.From),
-		ToAddress:            common.HexToAddress(depositsRequest.To),
+		FromAddress:          depositsRequest.From,
+		ToAddress:            depositsRequest.To,
 		Amount:               amountBig,
 		GasLimit:             gasLimit,
 		MaxFeePerGas:         feeInfo.MaxPriorityFee.String(),
 		MaxPriorityFeePerGas: feeInfo.MultipliedTip.String(),
 		TokenType:            determineTokenType(depositsRequest.ContractAddress),
-		TokenAddress:         common.HexToAddress(depositsRequest.ContractAddress),
+		TokenAddress:         depositsRequest.ContractAddress,
 		TokenId:              depositsRequest.TokenId,
 		TokenMeta:            depositsRequest.TokenMeta,
 		TxSignHex:            "",

@@ -9,10 +9,10 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/dapplink-labs/multichain-sync-sol/config"
-	"github.com/dapplink-labs/multichain-sync-sol/database"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/account"
+	"github.com/Gavine-Gao/blockchain-sync-sol/config"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/account"
 )
 
 const (

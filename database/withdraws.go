@@ -3,7 +3,7 @@ package database
 import (
 	"errors"
 	"fmt"
-	"github.com/dapplink-labs/multichain-sync-sol/common/bigint"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/bigint"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 	"math/big"

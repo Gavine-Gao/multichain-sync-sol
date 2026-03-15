@@ -8,11 +8,11 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/dapplink-labs/multichain-sync-sol/common/retry"
-	"github.com/dapplink-labs/multichain-sync-sol/common/tasks"
-	"github.com/dapplink-labs/multichain-sync-sol/config"
-	"github.com/dapplink-labs/multichain-sync-sol/database"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/retry"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/tasks"
+	"github.com/Gavine-Gao/blockchain-sync-sol/config"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient"
 )
 
 type Internal struct {

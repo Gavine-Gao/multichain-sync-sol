@@ -3,7 +3,7 @@ package cache
 import (
 	"sync"
 
-	"github.com/dapplink-labs/multichain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
 	"github.com/dgraph-io/ristretto"
 	"github.com/ethereum/go-ethereum/log"
 )

@@ -1,6 +1,6 @@
 package notifier
 
-import "github.com/dapplink-labs/multichain-sync-sol/database"
+import "github.com/Gavine-Gao/blockchain-sync-sol/database"
 
 type NotifyRequest struct {
 	Txn []*Transaction `json:"txn"`

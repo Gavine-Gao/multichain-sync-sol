@@ -11,9 +11,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/dapplink-labs/multichain-sync-sol/database"
-	"github.com/dapplink-labs/multichain-sync-sol/protobuf/dal-wallet-go"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/protobuf/dal-wallet-go"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient"
 )
 
 const MaxRecvMessageSize = 1024 * 1024 * 300

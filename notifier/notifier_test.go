@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/dapplink-labs/multichain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
 )
 
 func setupNotifier(t *testing.T) *Notifier {

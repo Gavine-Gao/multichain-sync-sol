@@ -2,14 +2,14 @@ package database
 
 import (
 	"errors"
-	"github.com/dapplink-labs/multichain-sync-sol/common/bigint"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/bigint"
 	"math/big"
 
 	"gorm.io/gorm"
 
 	"github.com/google/uuid"
 
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/account"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/account"
 )
 
 type Transactions struct {

@@ -9,12 +9,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/dapplink-labs/multichain-sync-sol/common/json2"
-	"github.com/dapplink-labs/multichain-sync-sol/config"
-	"github.com/dapplink-labs/multichain-sync-sol/database"
-	dal_wallet_go "github.com/dapplink-labs/multichain-sync-sol/protobuf/dal-wallet-go"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/account"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/json2"
+	"github.com/Gavine-Gao/blockchain-sync-sol/config"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
+	dal_wallet_go "github.com/Gavine-Gao/blockchain-sync-sol/protobuf/dal-wallet-go"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/account"
 )
 
 const (

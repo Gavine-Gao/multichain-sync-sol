@@ -13,16 +13,16 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/params"
 
-	multichain_transaction_syncs "github.com/dapplink-labs/multichain-sync-sol"
-	"github.com/dapplink-labs/multichain-sync-sol/common/cliapp"
-	"github.com/dapplink-labs/multichain-sync-sol/common/opio"
-	"github.com/dapplink-labs/multichain-sync-sol/config"
-	"github.com/dapplink-labs/multichain-sync-sol/database"
-	flags2 "github.com/dapplink-labs/multichain-sync-sol/flags"
-	"github.com/dapplink-labs/multichain-sync-sol/notifier"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient"
-	"github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/account"
-	"github.com/dapplink-labs/multichain-sync-sol/services"
+	blockchain_transaction_syncs "github.com/Gavine-Gao/blockchain-sync-sol"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/cliapp"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/opio"
+	"github.com/Gavine-Gao/blockchain-sync-sol/config"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
+	flags2 "github.com/Gavine-Gao/blockchain-sync-sol/flags"
+	"github.com/Gavine-Gao/blockchain-sync-sol/notifier"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient"
+	"github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/account"
+	"github.com/Gavine-Gao/blockchain-sync-sol/services"
 )
 
 const (
@@ -38,7 +38,7 @@ func runMultichainSync(ctx *cli.Context, shutdown context.CancelCauseFunc) (clia
 		log.Error("failed to load config", "err", err)
 		return nil, err
 	}
-	return multichain_transaction_syncs.NewMultiChainSync(ctx.Context, &cfg, shutdown)
+	return blockchain_transaction_syncs.NewBlockChainSync(ctx.Context, &cfg, shutdown)
 }
 
 func runRpc(ctx *cli.Context, shutdown context.CancelCauseFunc) (cliapp.Lifecycle, error) {
@@ -65,7 +65,7 @@ func runRpc(ctx *cli.Context, shutdown context.CancelCauseFunc) (cliapp.Lifecycl
 		return nil, err
 	}
 	client := account.NewWalletAccountServiceClient(conn)
-	accountClient, err := rpcclient.NewWalletChainAccountClient(context.Background(), client, "Ethereum")
+	accountClient, err := rpcclient.NewWalletChainAccountClient(context.Background(), client, cfg.ChainNode.ChainName)
 	if err != nil {
 		log.Error("new wallet account client fail", "err", err)
 		return nil, err
@@ -132,7 +132,7 @@ func NewCli(GitCommit string, GitData string) *cli.App {
 			{
 				Name:        "notify",
 				Flags:       flags,
-				Description: "Run rpc scanner wallet chain node",
+				Description: "Run notify task",
 				Action:      cliapp.LifecycleCmd(runNotify),
 			},
 			{

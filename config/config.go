@@ -6,7 +6,7 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/urfave/cli/v2"
 
-	"github.com/dapplink-labs/multichain-sync-sol/flags"
+	"github.com/Gavine-Gao/blockchain-sync-sol/flags"
 )
 
 const (

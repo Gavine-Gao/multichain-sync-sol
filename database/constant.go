@@ -21,10 +21,10 @@ const (
 type TokenType string
 
 const (
-	TokenTypeETH     TokenType = "ETH"
-	TokenTypeERC20   TokenType = "ERC20"
-	TokenTypeERC721  TokenType = "ERC721"
-	TokenTypeERC1155 TokenType = "ERC1155"
+	TokenTypeNative TokenType = "native"  // 原生代币: ETH / SOL / BTC
+	TokenTypeToken  TokenType = "token"   // 合约代币: ERC20 / SPL / BRC20
+	TokenTypeNFT    TokenType = "nft"     // NFT: ERC721 等
+	TokenTypeMulti  TokenType = "multi"   // 多合一: ERC1155 等
 )
 
 type AddressType string

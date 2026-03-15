@@ -7,7 +7,7 @@
 package account
 
 import (
-	common "github.com/dapplink-labs/multichain-sync-sol/rpcclient/chain-account/common"
+	common "github.com/Gavine-Gao/blockchain-sync-sol/rpcclient/chain-account/common"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

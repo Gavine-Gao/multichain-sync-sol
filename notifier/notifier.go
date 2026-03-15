@@ -9,9 +9,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/log"
 
-	"github.com/dapplink-labs/multichain-sync-sol/common/retry"
-	"github.com/dapplink-labs/multichain-sync-sol/common/tasks"
-	"github.com/dapplink-labs/multichain-sync-sol/database"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/retry"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/tasks"
+	"github.com/Gavine-Gao/blockchain-sync-sol/database"
 )
 
 type Notifier struct {
@@ -198,16 +198,16 @@ func (nf *Notifier) BuildNotifyTransaction(deposits []*database.Deposits, withdr
 	var notifyTransactions []*Transaction
 	for _, deposit := range deposits {
 		txItem := &Transaction{
-			BlockHash:    deposit.BlockHash.String(),
+			BlockHash:    deposit.BlockHash,
 			BlockNumber:  deposit.BlockNumber.Uint64(),
-			Hash:         deposit.TxHash.String(),
-			FromAddress:  deposit.FromAddress.String(),
-			ToAddress:    deposit.ToAddress.String(),
+			Hash:         deposit.TxHash,
+			FromAddress:  deposit.FromAddress,
+			ToAddress:    deposit.ToAddress,
 			Value:        deposit.Amount.String(),
 			Fee:          deposit.MaxFeePerGas,
 			TxType:       deposit.TxType,
 			Confirms:     deposit.Confirms,
-			TokenAddress: deposit.TokenAddress.String(),
+			TokenAddress: deposit.TokenAddress,
 			TokenId:      deposit.TokenId,
 			TokenMeta:    deposit.TokenMeta,
 		}
@@ -216,16 +216,16 @@ func (nf *Notifier) BuildNotifyTransaction(deposits []*database.Deposits, withdr
 
 	for _, withdraw := range withdraws {
 		txItem := &Transaction{
-			BlockHash:    withdraw.BlockHash.String(),
+			BlockHash:    withdraw.BlockHash,
 			BlockNumber:  withdraw.BlockNumber.Uint64(),
-			Hash:         withdraw.TxHash.String(),
-			FromAddress:  withdraw.FromAddress.String(),
-			ToAddress:    withdraw.ToAddress.String(),
+			Hash:         withdraw.TxHash,
+			FromAddress:  withdraw.FromAddress,
+			ToAddress:    withdraw.ToAddress,
 			Value:        withdraw.Amount.String(),
 			Fee:          withdraw.MaxFeePerGas,
 			TxType:       withdraw.TxType,
 			Confirms:     0,
-			TokenAddress: withdraw.TokenAddress.String(),
+			TokenAddress: withdraw.TokenAddress,
 			TokenId:      withdraw.TokenId,
 			TokenMeta:    withdraw.TokenMeta,
 		}
@@ -234,16 +234,16 @@ func (nf *Notifier) BuildNotifyTransaction(deposits []*database.Deposits, withdr
 
 	for _, internal := range internals {
 		txItem := &Transaction{
-			BlockHash:    internal.BlockHash.String(),
+			BlockHash:    internal.BlockHash,
 			BlockNumber:  internal.BlockNumber.Uint64(),
-			Hash:         internal.TxHash.String(),
-			FromAddress:  internal.FromAddress.String(),
-			ToAddress:    internal.ToAddress.String(),
+			Hash:         internal.TxHash,
+			FromAddress:  internal.FromAddress,
+			ToAddress:    internal.ToAddress,
 			Value:        internal.Amount.String(),
 			Fee:          internal.MaxFeePerGas,
 			TxType:       internal.TxType,
 			Confirms:     0,
-			TokenAddress: internal.TokenAddress.String(),
+			TokenAddress: internal.TokenAddress,
 			TokenId:      internal.TokenId,
 			TokenMeta:    internal.TokenMeta,
 		}

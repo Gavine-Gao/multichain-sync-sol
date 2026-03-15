@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/dapplink-labs/multichain-sync-sol/common/opio"
+	"github.com/Gavine-Gao/blockchain-sync-sol/common/opio"
 	"github.com/urfave/cli/v2"
 )
 

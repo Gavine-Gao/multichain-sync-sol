@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.25.3
-// source: dapplink/account.proto
+// source: gavine/account.proto
 
 package account
 
@@ -19,30 +19,30 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	WalletAccountService_GetSupportChains_FullMethodName          = "/dapplink.account.WalletAccountService/getSupportChains"
-	WalletAccountService_ConvertAddress_FullMethodName            = "/dapplink.account.WalletAccountService/convertAddress"
-	WalletAccountService_ValidAddress_FullMethodName              = "/dapplink.account.WalletAccountService/validAddress"
-	WalletAccountService_GetBlockByNumber_FullMethodName          = "/dapplink.account.WalletAccountService/getBlockByNumber"
-	WalletAccountService_GetBlockByHash_FullMethodName            = "/dapplink.account.WalletAccountService/getBlockByHash"
-	WalletAccountService_GetBlockHeaderByHash_FullMethodName      = "/dapplink.account.WalletAccountService/getBlockHeaderByHash"
-	WalletAccountService_GetBlockHeaderByNumber_FullMethodName    = "/dapplink.account.WalletAccountService/getBlockHeaderByNumber"
-	WalletAccountService_GetBlockHeaderByRange_FullMethodName     = "/dapplink.account.WalletAccountService/getBlockHeaderByRange"
-	WalletAccountService_GetAccount_FullMethodName                = "/dapplink.account.WalletAccountService/getAccount"
-	WalletAccountService_GetFee_FullMethodName                    = "/dapplink.account.WalletAccountService/getFee"
-	WalletAccountService_SendTx_FullMethodName                    = "/dapplink.account.WalletAccountService/SendTx"
-	WalletAccountService_GetTxByAddress_FullMethodName            = "/dapplink.account.WalletAccountService/getTxByAddress"
-	WalletAccountService_GetTxByHash_FullMethodName               = "/dapplink.account.WalletAccountService/getTxByHash"
-	WalletAccountService_BuildUnSignTransaction_FullMethodName    = "/dapplink.account.WalletAccountService/buildUnSignTransaction"
-	WalletAccountService_BuildSignedTransaction_FullMethodName    = "/dapplink.account.WalletAccountService/buildSignedTransaction"
-	WalletAccountService_DecodeTransaction_FullMethodName         = "/dapplink.account.WalletAccountService/decodeTransaction"
-	WalletAccountService_VerifySignedTransaction_FullMethodName   = "/dapplink.account.WalletAccountService/verifySignedTransaction"
-	WalletAccountService_GetExtraData_FullMethodName              = "/dapplink.account.WalletAccountService/getExtraData"
-	WalletAccountService_GetNftListByAddress_FullMethodName       = "/dapplink.account.WalletAccountService/getNftListByAddress"
-	WalletAccountService_GetNftCollection_FullMethodName          = "/dapplink.account.WalletAccountService/getNftCollection"
-	WalletAccountService_GetNftDetail_FullMethodName              = "/dapplink.account.WalletAccountService/getNftDetail"
-	WalletAccountService_GetNftHolderList_FullMethodName          = "/dapplink.account.WalletAccountService/getNftHolderList"
-	WalletAccountService_GetNftTradeHistory_FullMethodName        = "/dapplink.account.WalletAccountService/getNftTradeHistory"
-	WalletAccountService_GetAddressNftTradeHistory_FullMethodName = "/dapplink.account.WalletAccountService/getAddressNftTradeHistory"
+	WalletAccountService_GetSupportChains_FullMethodName          = "/gavine.account.WalletAccountService/getSupportChains"
+	WalletAccountService_ConvertAddress_FullMethodName            = "/gavine.account.WalletAccountService/convertAddress"
+	WalletAccountService_ValidAddress_FullMethodName              = "/gavine.account.WalletAccountService/validAddress"
+	WalletAccountService_GetBlockByNumber_FullMethodName          = "/gavine.account.WalletAccountService/getBlockByNumber"
+	WalletAccountService_GetBlockByHash_FullMethodName            = "/gavine.account.WalletAccountService/getBlockByHash"
+	WalletAccountService_GetBlockHeaderByHash_FullMethodName      = "/gavine.account.WalletAccountService/getBlockHeaderByHash"
+	WalletAccountService_GetBlockHeaderByNumber_FullMethodName    = "/gavine.account.WalletAccountService/getBlockHeaderByNumber"
+	WalletAccountService_GetBlockHeaderByRange_FullMethodName     = "/gavine.account.WalletAccountService/getBlockHeaderByRange"
+	WalletAccountService_GetAccount_FullMethodName                = "/gavine.account.WalletAccountService/getAccount"
+	WalletAccountService_GetFee_FullMethodName                    = "/gavine.account.WalletAccountService/getFee"
+	WalletAccountService_SendTx_FullMethodName                    = "/gavine.account.WalletAccountService/SendTx"
+	WalletAccountService_GetTxByAddress_FullMethodName            = "/gavine.account.WalletAccountService/getTxByAddress"
+	WalletAccountService_GetTxByHash_FullMethodName               = "/gavine.account.WalletAccountService/getTxByHash"
+	WalletAccountService_BuildUnSignTransaction_FullMethodName    = "/gavine.account.WalletAccountService/buildUnSignTransaction"
+	WalletAccountService_BuildSignedTransaction_FullMethodName    = "/gavine.account.WalletAccountService/buildSignedTransaction"
+	WalletAccountService_DecodeTransaction_FullMethodName         = "/gavine.account.WalletAccountService/decodeTransaction"
+	WalletAccountService_VerifySignedTransaction_FullMethodName   = "/gavine.account.WalletAccountService/verifySignedTransaction"
+	WalletAccountService_GetExtraData_FullMethodName              = "/gavine.account.WalletAccountService/getExtraData"
+	WalletAccountService_GetNftListByAddress_FullMethodName       = "/gavine.account.WalletAccountService/getNftListByAddress"
+	WalletAccountService_GetNftCollection_FullMethodName          = "/gavine.account.WalletAccountService/getNftCollection"
+	WalletAccountService_GetNftDetail_FullMethodName              = "/gavine.account.WalletAccountService/getNftDetail"
+	WalletAccountService_GetNftHolderList_FullMethodName          = "/gavine.account.WalletAccountService/getNftHolderList"
+	WalletAccountService_GetNftTradeHistory_FullMethodName        = "/gavine.account.WalletAccountService/getNftTradeHistory"
+	WalletAccountService_GetAddressNftTradeHistory_FullMethodName = "/gavine.account.WalletAccountService/getAddressNftTradeHistory"
 )
 
 // WalletAccountServiceClient is the client API for WalletAccountService service.
@@ -888,7 +888,7 @@ func _WalletAccountService_GetAddressNftTradeHistory_Handler(srv interface{}, ct
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var WalletAccountService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "dapplink.account.WalletAccountService",
+	ServiceName: "gavine.account.WalletAccountService",
 	HandlerType: (*WalletAccountServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -989,5 +989,5 @@ var WalletAccountService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "dapplink/account.proto",
+	Metadata: "gavine/account.proto",
 }

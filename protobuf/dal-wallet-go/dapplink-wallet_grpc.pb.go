@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v4.25.3
-// source: protobuf/dapplink-wallet.proto
+// source: protobuf/gavine-wallet.proto
 
 package dal_wallet_go
 
@@ -267,5 +267,5 @@ var BusinessMiddleWireServices_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "protobuf/dapplink-wallet.proto",
+	Metadata: "protobuf/gavine-wallet.proto",
 }

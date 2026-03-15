@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.5
 // 	protoc        v4.25.3
-// source: dapplink/account.proto
+// source: gavine/account.proto
 
 package account
 
@@ -65,11 +65,11 @@ func (x TxStatus) String() string {
 }
 
 func (TxStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_dapplink_account_proto_enumTypes[0].Descriptor()
+	return file_gavine_account_proto_enumTypes[0].Descriptor()
 }
 
 func (TxStatus) Type() protoreflect.EnumType {
-	return &file_dapplink_account_proto_enumTypes[0]
+	return &file_gavine_account_proto_enumTypes[0]
 }
 
 func (x TxStatus) Number() protoreflect.EnumNumber {
@@ -78,7 +78,7 @@ func (x TxStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use TxStatus.Descriptor instead.
 func (TxStatus) EnumDescriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{0}
+	return file_gavine_account_proto_rawDescGZIP(), []int{0}
 }
 
 type TxMessage struct {
@@ -89,7 +89,7 @@ type TxMessage struct {
 	To              string                 `protobuf:"bytes,4,opt,name=to,proto3" json:"to,omitempty"`
 	Value           string                 `protobuf:"bytes,7,opt,name=value,proto3" json:"value,omitempty"`
 	Fee             string                 `protobuf:"bytes,5,opt,name=fee,proto3" json:"fee,omitempty"`
-	Status          TxStatus               `protobuf:"varint,6,opt,name=status,proto3,enum=dapplink.account.TxStatus" json:"status,omitempty"`
+	Status          TxStatus               `protobuf:"varint,6,opt,name=status,proto3,enum=gavine.account.TxStatus" json:"status,omitempty"`
 	Type            int32                  `protobuf:"varint,8,opt,name=type,proto3" json:"type,omitempty"`
 	Height          string                 `protobuf:"bytes,9,opt,name=height,proto3" json:"height,omitempty"`
 	ContractAddress string                 `protobuf:"bytes,10,opt,name=contract_address,json=contractAddress,proto3" json:"contract_address,omitempty"`
@@ -101,7 +101,7 @@ type TxMessage struct {
 
 func (x *TxMessage) Reset() {
 	*x = TxMessage{}
-	mi := &file_dapplink_account_proto_msgTypes[0]
+	mi := &file_gavine_account_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -113,7 +113,7 @@ func (x *TxMessage) String() string {
 func (*TxMessage) ProtoMessage() {}
 
 func (x *TxMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[0]
+	mi := &file_gavine_account_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -126,7 +126,7 @@ func (x *TxMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TxMessage.ProtoReflect.Descriptor instead.
 func (*TxMessage) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{0}
+	return file_gavine_account_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TxMessage) GetHash() string {
@@ -224,7 +224,7 @@ type BlockData struct {
 
 func (x *BlockData) Reset() {
 	*x = BlockData{}
-	mi := &file_dapplink_account_proto_msgTypes[1]
+	mi := &file_gavine_account_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -236,7 +236,7 @@ func (x *BlockData) String() string {
 func (*BlockData) ProtoMessage() {}
 
 func (x *BlockData) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[1]
+	mi := &file_gavine_account_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -249,7 +249,7 @@ func (x *BlockData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockData.ProtoReflect.Descriptor instead.
 func (*BlockData) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{1}
+	return file_gavine_account_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *BlockData) GetHash() string {
@@ -301,7 +301,7 @@ type BlockHeader struct {
 
 func (x *BlockHeader) Reset() {
 	*x = BlockHeader{}
-	mi := &file_dapplink_account_proto_msgTypes[2]
+	mi := &file_gavine_account_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -313,7 +313,7 @@ func (x *BlockHeader) String() string {
 func (*BlockHeader) ProtoMessage() {}
 
 func (x *BlockHeader) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[2]
+	mi := &file_gavine_account_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *BlockHeader) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockHeader.ProtoReflect.Descriptor instead.
 func (*BlockHeader) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{2}
+	return file_gavine_account_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *BlockHeader) GetHash() string {
@@ -486,7 +486,7 @@ type Log struct {
 
 func (x *Log) Reset() {
 	*x = Log{}
-	mi := &file_dapplink_account_proto_msgTypes[3]
+	mi := &file_gavine_account_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -498,7 +498,7 @@ func (x *Log) String() string {
 func (*Log) ProtoMessage() {}
 
 func (x *Log) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[3]
+	mi := &file_gavine_account_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -511,7 +511,7 @@ func (x *Log) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Log.ProtoReflect.Descriptor instead.
 func (*Log) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{3}
+	return file_gavine_account_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Log) GetAddress() string {
@@ -588,7 +588,7 @@ type SupportChainsRequest struct {
 
 func (x *SupportChainsRequest) Reset() {
 	*x = SupportChainsRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[4]
+	mi := &file_gavine_account_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -600,7 +600,7 @@ func (x *SupportChainsRequest) String() string {
 func (*SupportChainsRequest) ProtoMessage() {}
 
 func (x *SupportChainsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[4]
+	mi := &file_gavine_account_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -613,7 +613,7 @@ func (x *SupportChainsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SupportChainsRequest.ProtoReflect.Descriptor instead.
 func (*SupportChainsRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{4}
+	return file_gavine_account_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *SupportChainsRequest) GetConsumerToken() string {
@@ -639,7 +639,7 @@ func (x *SupportChainsRequest) GetNetwork() string {
 
 type SupportChainsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Support       bool                   `protobuf:"varint,3,opt,name=support,proto3" json:"support,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -648,7 +648,7 @@ type SupportChainsResponse struct {
 
 func (x *SupportChainsResponse) Reset() {
 	*x = SupportChainsResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[5]
+	mi := &file_gavine_account_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -660,7 +660,7 @@ func (x *SupportChainsResponse) String() string {
 func (*SupportChainsResponse) ProtoMessage() {}
 
 func (x *SupportChainsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[5]
+	mi := &file_gavine_account_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -673,7 +673,7 @@ func (x *SupportChainsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SupportChainsResponse.ProtoReflect.Descriptor instead.
 func (*SupportChainsResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{5}
+	return file_gavine_account_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *SupportChainsResponse) GetCode() common.ReturnCode {
@@ -710,7 +710,7 @@ type ConvertAddressRequest struct {
 
 func (x *ConvertAddressRequest) Reset() {
 	*x = ConvertAddressRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[6]
+	mi := &file_gavine_account_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -722,7 +722,7 @@ func (x *ConvertAddressRequest) String() string {
 func (*ConvertAddressRequest) ProtoMessage() {}
 
 func (x *ConvertAddressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[6]
+	mi := &file_gavine_account_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -735,7 +735,7 @@ func (x *ConvertAddressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConvertAddressRequest.ProtoReflect.Descriptor instead.
 func (*ConvertAddressRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{6}
+	return file_gavine_account_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ConvertAddressRequest) GetConsumerToken() string {
@@ -775,7 +775,7 @@ func (x *ConvertAddressRequest) GetPublicKey() string {
 
 type ConvertAddressResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Address       string                 `protobuf:"bytes,3,opt,name=address,proto3" json:"address,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -784,7 +784,7 @@ type ConvertAddressResponse struct {
 
 func (x *ConvertAddressResponse) Reset() {
 	*x = ConvertAddressResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[7]
+	mi := &file_gavine_account_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -796,7 +796,7 @@ func (x *ConvertAddressResponse) String() string {
 func (*ConvertAddressResponse) ProtoMessage() {}
 
 func (x *ConvertAddressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[7]
+	mi := &file_gavine_account_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -809,7 +809,7 @@ func (x *ConvertAddressResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ConvertAddressResponse.ProtoReflect.Descriptor instead.
 func (*ConvertAddressResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{7}
+	return file_gavine_account_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ConvertAddressResponse) GetCode() common.ReturnCode {
@@ -845,7 +845,7 @@ type ValidAddressRequest struct {
 
 func (x *ValidAddressRequest) Reset() {
 	*x = ValidAddressRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[8]
+	mi := &file_gavine_account_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -857,7 +857,7 @@ func (x *ValidAddressRequest) String() string {
 func (*ValidAddressRequest) ProtoMessage() {}
 
 func (x *ValidAddressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[8]
+	mi := &file_gavine_account_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -870,7 +870,7 @@ func (x *ValidAddressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidAddressRequest.ProtoReflect.Descriptor instead.
 func (*ValidAddressRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{8}
+	return file_gavine_account_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ValidAddressRequest) GetConsumerToken() string {
@@ -903,7 +903,7 @@ func (x *ValidAddressRequest) GetAddress() string {
 
 type ValidAddressResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Valid         bool                   `protobuf:"varint,3,opt,name=valid,proto3" json:"valid,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -912,7 +912,7 @@ type ValidAddressResponse struct {
 
 func (x *ValidAddressResponse) Reset() {
 	*x = ValidAddressResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[9]
+	mi := &file_gavine_account_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -924,7 +924,7 @@ func (x *ValidAddressResponse) String() string {
 func (*ValidAddressResponse) ProtoMessage() {}
 
 func (x *ValidAddressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[9]
+	mi := &file_gavine_account_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -937,7 +937,7 @@ func (x *ValidAddressResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ValidAddressResponse.ProtoReflect.Descriptor instead.
 func (*ValidAddressResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{9}
+	return file_gavine_account_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ValidAddressResponse) GetCode() common.ReturnCode {
@@ -973,7 +973,7 @@ type BlockNumberRequest struct {
 
 func (x *BlockNumberRequest) Reset() {
 	*x = BlockNumberRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[10]
+	mi := &file_gavine_account_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -985,7 +985,7 @@ func (x *BlockNumberRequest) String() string {
 func (*BlockNumberRequest) ProtoMessage() {}
 
 func (x *BlockNumberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[10]
+	mi := &file_gavine_account_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -998,7 +998,7 @@ func (x *BlockNumberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockNumberRequest.ProtoReflect.Descriptor instead.
 func (*BlockNumberRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{10}
+	return file_gavine_account_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *BlockNumberRequest) GetConsumerToken() string {
@@ -1041,7 +1041,7 @@ type BlockHashRequest struct {
 
 func (x *BlockHashRequest) Reset() {
 	*x = BlockHashRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[11]
+	mi := &file_gavine_account_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1053,7 +1053,7 @@ func (x *BlockHashRequest) String() string {
 func (*BlockHashRequest) ProtoMessage() {}
 
 func (x *BlockHashRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[11]
+	mi := &file_gavine_account_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1066,7 +1066,7 @@ func (x *BlockHashRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockHashRequest.ProtoReflect.Descriptor instead.
 func (*BlockHashRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{11}
+	return file_gavine_account_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *BlockHashRequest) GetConsumerToken() string {
@@ -1112,7 +1112,7 @@ type BlockInfoTransactionList struct {
 
 func (x *BlockInfoTransactionList) Reset() {
 	*x = BlockInfoTransactionList{}
-	mi := &file_dapplink_account_proto_msgTypes[12]
+	mi := &file_gavine_account_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1124,7 +1124,7 @@ func (x *BlockInfoTransactionList) String() string {
 func (*BlockInfoTransactionList) ProtoMessage() {}
 
 func (x *BlockInfoTransactionList) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[12]
+	mi := &file_gavine_account_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1137,7 +1137,7 @@ func (x *BlockInfoTransactionList) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockInfoTransactionList.ProtoReflect.Descriptor instead.
 func (*BlockInfoTransactionList) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{12}
+	return file_gavine_account_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *BlockInfoTransactionList) GetFrom() string {
@@ -1191,7 +1191,7 @@ func (x *BlockInfoTransactionList) GetAmount() string {
 
 type BlockResponse struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Code          common.ReturnCode           `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode           `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                      `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Height        int64                       `protobuf:"varint,3,opt,name=height,proto3" json:"height,omitempty"`
 	Hash          string                      `protobuf:"bytes,4,opt,name=hash,proto3" json:"hash,omitempty"`
@@ -1203,7 +1203,7 @@ type BlockResponse struct {
 
 func (x *BlockResponse) Reset() {
 	*x = BlockResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[13]
+	mi := &file_gavine_account_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1215,7 +1215,7 @@ func (x *BlockResponse) String() string {
 func (*BlockResponse) ProtoMessage() {}
 
 func (x *BlockResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[13]
+	mi := &file_gavine_account_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1228,7 +1228,7 @@ func (x *BlockResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockResponse.ProtoReflect.Descriptor instead.
 func (*BlockResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{13}
+	return file_gavine_account_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *BlockResponse) GetCode() common.ReturnCode {
@@ -1285,7 +1285,7 @@ type BlockHeaderHashRequest struct {
 
 func (x *BlockHeaderHashRequest) Reset() {
 	*x = BlockHeaderHashRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[14]
+	mi := &file_gavine_account_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1297,7 +1297,7 @@ func (x *BlockHeaderHashRequest) String() string {
 func (*BlockHeaderHashRequest) ProtoMessage() {}
 
 func (x *BlockHeaderHashRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[14]
+	mi := &file_gavine_account_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1310,7 +1310,7 @@ func (x *BlockHeaderHashRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockHeaderHashRequest.ProtoReflect.Descriptor instead.
 func (*BlockHeaderHashRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{14}
+	return file_gavine_account_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *BlockHeaderHashRequest) GetConsumerToken() string {
@@ -1353,7 +1353,7 @@ type BlockHeaderNumberRequest struct {
 
 func (x *BlockHeaderNumberRequest) Reset() {
 	*x = BlockHeaderNumberRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[15]
+	mi := &file_gavine_account_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1365,7 +1365,7 @@ func (x *BlockHeaderNumberRequest) String() string {
 func (*BlockHeaderNumberRequest) ProtoMessage() {}
 
 func (x *BlockHeaderNumberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[15]
+	mi := &file_gavine_account_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1378,7 +1378,7 @@ func (x *BlockHeaderNumberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockHeaderNumberRequest.ProtoReflect.Descriptor instead.
 func (*BlockHeaderNumberRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{15}
+	return file_gavine_account_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *BlockHeaderNumberRequest) GetConsumerToken() string {
@@ -1411,7 +1411,7 @@ func (x *BlockHeaderNumberRequest) GetHeight() int64 {
 
 type BlockHeaderResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	BlockHeader   *BlockHeader           `protobuf:"bytes,3,opt,name=block_header,json=blockHeader,proto3" json:"block_header,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1420,7 +1420,7 @@ type BlockHeaderResponse struct {
 
 func (x *BlockHeaderResponse) Reset() {
 	*x = BlockHeaderResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[16]
+	mi := &file_gavine_account_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1432,7 +1432,7 @@ func (x *BlockHeaderResponse) String() string {
 func (*BlockHeaderResponse) ProtoMessage() {}
 
 func (x *BlockHeaderResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[16]
+	mi := &file_gavine_account_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1445,7 +1445,7 @@ func (x *BlockHeaderResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockHeaderResponse.ProtoReflect.Descriptor instead.
 func (*BlockHeaderResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{16}
+	return file_gavine_account_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *BlockHeaderResponse) GetCode() common.ReturnCode {
@@ -1482,7 +1482,7 @@ type BlockByRangeRequest struct {
 
 func (x *BlockByRangeRequest) Reset() {
 	*x = BlockByRangeRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[17]
+	mi := &file_gavine_account_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1494,7 +1494,7 @@ func (x *BlockByRangeRequest) String() string {
 func (*BlockByRangeRequest) ProtoMessage() {}
 
 func (x *BlockByRangeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[17]
+	mi := &file_gavine_account_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1507,7 +1507,7 @@ func (x *BlockByRangeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockByRangeRequest.ProtoReflect.Descriptor instead.
 func (*BlockByRangeRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{17}
+	return file_gavine_account_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *BlockByRangeRequest) GetConsumerToken() string {
@@ -1547,7 +1547,7 @@ func (x *BlockByRangeRequest) GetEnd() string {
 
 type BlockByRangeResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	BlockHeader   []*BlockHeader         `protobuf:"bytes,3,rep,name=block_header,json=blockHeader,proto3" json:"block_header,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -1556,7 +1556,7 @@ type BlockByRangeResponse struct {
 
 func (x *BlockByRangeResponse) Reset() {
 	*x = BlockByRangeResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[18]
+	mi := &file_gavine_account_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1568,7 +1568,7 @@ func (x *BlockByRangeResponse) String() string {
 func (*BlockByRangeResponse) ProtoMessage() {}
 
 func (x *BlockByRangeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[18]
+	mi := &file_gavine_account_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1581,7 +1581,7 @@ func (x *BlockByRangeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BlockByRangeResponse.ProtoReflect.Descriptor instead.
 func (*BlockByRangeResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{18}
+	return file_gavine_account_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *BlockByRangeResponse) GetCode() common.ReturnCode {
@@ -1620,7 +1620,7 @@ type AccountRequest struct {
 
 func (x *AccountRequest) Reset() {
 	*x = AccountRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[19]
+	mi := &file_gavine_account_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1632,7 +1632,7 @@ func (x *AccountRequest) String() string {
 func (*AccountRequest) ProtoMessage() {}
 
 func (x *AccountRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[19]
+	mi := &file_gavine_account_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1645,7 +1645,7 @@ func (x *AccountRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountRequest.ProtoReflect.Descriptor instead.
 func (*AccountRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{19}
+	return file_gavine_account_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *AccountRequest) GetConsumerToken() string {
@@ -1699,7 +1699,7 @@ func (x *AccountRequest) GetProposerKeyIndex() uint64 {
 
 type AccountResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Network       string                 `protobuf:"bytes,3,opt,name=network,proto3" json:"network,omitempty"`
 	AccountNumber string                 `protobuf:"bytes,4,opt,name=account_number,json=accountNumber,proto3" json:"account_number,omitempty"`
@@ -1711,7 +1711,7 @@ type AccountResponse struct {
 
 func (x *AccountResponse) Reset() {
 	*x = AccountResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[20]
+	mi := &file_gavine_account_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1723,7 +1723,7 @@ func (x *AccountResponse) String() string {
 func (*AccountResponse) ProtoMessage() {}
 
 func (x *AccountResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[20]
+	mi := &file_gavine_account_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1736,7 +1736,7 @@ func (x *AccountResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AccountResponse.ProtoReflect.Descriptor instead.
 func (*AccountResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{20}
+	return file_gavine_account_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *AccountResponse) GetCode() common.ReturnCode {
@@ -1795,7 +1795,7 @@ type FeeRequest struct {
 
 func (x *FeeRequest) Reset() {
 	*x = FeeRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[21]
+	mi := &file_gavine_account_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1807,7 +1807,7 @@ func (x *FeeRequest) String() string {
 func (*FeeRequest) ProtoMessage() {}
 
 func (x *FeeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[21]
+	mi := &file_gavine_account_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1820,7 +1820,7 @@ func (x *FeeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FeeRequest.ProtoReflect.Descriptor instead.
 func (*FeeRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{21}
+	return file_gavine_account_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *FeeRequest) GetConsumerToken() string {
@@ -1867,7 +1867,7 @@ func (x *FeeRequest) GetAddress() string {
 
 type FeeResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	SlowFee       string                 `protobuf:"bytes,3,opt,name=slow_fee,json=slowFee,proto3" json:"slow_fee,omitempty"`
 	NormalFee     string                 `protobuf:"bytes,4,opt,name=normal_fee,json=normalFee,proto3" json:"normal_fee,omitempty"`
@@ -1878,7 +1878,7 @@ type FeeResponse struct {
 
 func (x *FeeResponse) Reset() {
 	*x = FeeResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[22]
+	mi := &file_gavine_account_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1890,7 +1890,7 @@ func (x *FeeResponse) String() string {
 func (*FeeResponse) ProtoMessage() {}
 
 func (x *FeeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[22]
+	mi := &file_gavine_account_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1903,7 +1903,7 @@ func (x *FeeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FeeResponse.ProtoReflect.Descriptor instead.
 func (*FeeResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{22}
+	return file_gavine_account_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *FeeResponse) GetCode() common.ReturnCode {
@@ -1954,7 +1954,7 @@ type SendTxRequest struct {
 
 func (x *SendTxRequest) Reset() {
 	*x = SendTxRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[23]
+	mi := &file_gavine_account_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1966,7 +1966,7 @@ func (x *SendTxRequest) String() string {
 func (*SendTxRequest) ProtoMessage() {}
 
 func (x *SendTxRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[23]
+	mi := &file_gavine_account_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1979,7 +1979,7 @@ func (x *SendTxRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendTxRequest.ProtoReflect.Descriptor instead.
 func (*SendTxRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{23}
+	return file_gavine_account_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *SendTxRequest) GetConsumerToken() string {
@@ -2019,7 +2019,7 @@ func (x *SendTxRequest) GetRawTx() string {
 
 type SendTxResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	TxHash        string                 `protobuf:"bytes,3,opt,name=tx_hash,json=txHash,proto3" json:"tx_hash,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2028,7 +2028,7 @@ type SendTxResponse struct {
 
 func (x *SendTxResponse) Reset() {
 	*x = SendTxResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[24]
+	mi := &file_gavine_account_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2040,7 +2040,7 @@ func (x *SendTxResponse) String() string {
 func (*SendTxResponse) ProtoMessage() {}
 
 func (x *SendTxResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[24]
+	mi := &file_gavine_account_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2053,7 +2053,7 @@ func (x *SendTxResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendTxResponse.ProtoReflect.Descriptor instead.
 func (*SendTxResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{24}
+	return file_gavine_account_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *SendTxResponse) GetCode() common.ReturnCode {
@@ -2093,7 +2093,7 @@ type TxAddressRequest struct {
 
 func (x *TxAddressRequest) Reset() {
 	*x = TxAddressRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[25]
+	mi := &file_gavine_account_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2105,7 +2105,7 @@ func (x *TxAddressRequest) String() string {
 func (*TxAddressRequest) ProtoMessage() {}
 
 func (x *TxAddressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[25]
+	mi := &file_gavine_account_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2118,7 +2118,7 @@ func (x *TxAddressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TxAddressRequest.ProtoReflect.Descriptor instead.
 func (*TxAddressRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{25}
+	return file_gavine_account_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *TxAddressRequest) GetConsumerToken() string {
@@ -2179,7 +2179,7 @@ func (x *TxAddressRequest) GetPagesize() uint32 {
 
 type TxAddressResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Tx            []*TxMessage           `protobuf:"bytes,3,rep,name=tx,proto3" json:"tx,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2188,7 +2188,7 @@ type TxAddressResponse struct {
 
 func (x *TxAddressResponse) Reset() {
 	*x = TxAddressResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[26]
+	mi := &file_gavine_account_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2200,7 +2200,7 @@ func (x *TxAddressResponse) String() string {
 func (*TxAddressResponse) ProtoMessage() {}
 
 func (x *TxAddressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[26]
+	mi := &file_gavine_account_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2213,7 +2213,7 @@ func (x *TxAddressResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TxAddressResponse.ProtoReflect.Descriptor instead.
 func (*TxAddressResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{26}
+	return file_gavine_account_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *TxAddressResponse) GetCode() common.ReturnCode {
@@ -2250,7 +2250,7 @@ type TxHashRequest struct {
 
 func (x *TxHashRequest) Reset() {
 	*x = TxHashRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[27]
+	mi := &file_gavine_account_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2262,7 +2262,7 @@ func (x *TxHashRequest) String() string {
 func (*TxHashRequest) ProtoMessage() {}
 
 func (x *TxHashRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[27]
+	mi := &file_gavine_account_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2275,7 +2275,7 @@ func (x *TxHashRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TxHashRequest.ProtoReflect.Descriptor instead.
 func (*TxHashRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{27}
+	return file_gavine_account_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *TxHashRequest) GetConsumerToken() string {
@@ -2315,7 +2315,7 @@ func (x *TxHashRequest) GetHash() string {
 
 type TxHashResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Tx            *TxMessage             `protobuf:"bytes,3,opt,name=tx,proto3" json:"tx,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2324,7 +2324,7 @@ type TxHashResponse struct {
 
 func (x *TxHashResponse) Reset() {
 	*x = TxHashResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[28]
+	mi := &file_gavine_account_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2336,7 +2336,7 @@ func (x *TxHashResponse) String() string {
 func (*TxHashResponse) ProtoMessage() {}
 
 func (x *TxHashResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[28]
+	mi := &file_gavine_account_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2349,7 +2349,7 @@ func (x *TxHashResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TxHashResponse.ProtoReflect.Descriptor instead.
 func (*TxHashResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{28}
+	return file_gavine_account_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *TxHashResponse) GetCode() common.ReturnCode {
@@ -2385,7 +2385,7 @@ type UnSignTransactionRequest struct {
 
 func (x *UnSignTransactionRequest) Reset() {
 	*x = UnSignTransactionRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[29]
+	mi := &file_gavine_account_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2397,7 +2397,7 @@ func (x *UnSignTransactionRequest) String() string {
 func (*UnSignTransactionRequest) ProtoMessage() {}
 
 func (x *UnSignTransactionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[29]
+	mi := &file_gavine_account_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2410,7 +2410,7 @@ func (x *UnSignTransactionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnSignTransactionRequest.ProtoReflect.Descriptor instead.
 func (*UnSignTransactionRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{29}
+	return file_gavine_account_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *UnSignTransactionRequest) GetConsumerToken() string {
@@ -2443,7 +2443,7 @@ func (x *UnSignTransactionRequest) GetBase64Tx() string {
 
 type UnSignTransactionResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	UnSignTx      string                 `protobuf:"bytes,3,opt,name=un_sign_tx,json=unSignTx,proto3" json:"un_sign_tx,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2452,7 +2452,7 @@ type UnSignTransactionResponse struct {
 
 func (x *UnSignTransactionResponse) Reset() {
 	*x = UnSignTransactionResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[30]
+	mi := &file_gavine_account_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2464,7 +2464,7 @@ func (x *UnSignTransactionResponse) String() string {
 func (*UnSignTransactionResponse) ProtoMessage() {}
 
 func (x *UnSignTransactionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[30]
+	mi := &file_gavine_account_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2477,7 +2477,7 @@ func (x *UnSignTransactionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UnSignTransactionResponse.ProtoReflect.Descriptor instead.
 func (*UnSignTransactionResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{30}
+	return file_gavine_account_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *UnSignTransactionResponse) GetCode() common.ReturnCode {
@@ -2515,7 +2515,7 @@ type SignedTransactionRequest struct {
 
 func (x *SignedTransactionRequest) Reset() {
 	*x = SignedTransactionRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[31]
+	mi := &file_gavine_account_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2527,7 +2527,7 @@ func (x *SignedTransactionRequest) String() string {
 func (*SignedTransactionRequest) ProtoMessage() {}
 
 func (x *SignedTransactionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[31]
+	mi := &file_gavine_account_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2540,7 +2540,7 @@ func (x *SignedTransactionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignedTransactionRequest.ProtoReflect.Descriptor instead.
 func (*SignedTransactionRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{31}
+	return file_gavine_account_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *SignedTransactionRequest) GetConsumerToken() string {
@@ -2587,7 +2587,7 @@ func (x *SignedTransactionRequest) GetPublicKey() string {
 
 type SignedTransactionResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	SignedTx      string                 `protobuf:"bytes,3,opt,name=signed_tx,json=signedTx,proto3" json:"signed_tx,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2596,7 +2596,7 @@ type SignedTransactionResponse struct {
 
 func (x *SignedTransactionResponse) Reset() {
 	*x = SignedTransactionResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[32]
+	mi := &file_gavine_account_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2608,7 +2608,7 @@ func (x *SignedTransactionResponse) String() string {
 func (*SignedTransactionResponse) ProtoMessage() {}
 
 func (x *SignedTransactionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[32]
+	mi := &file_gavine_account_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2621,7 +2621,7 @@ func (x *SignedTransactionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SignedTransactionResponse.ProtoReflect.Descriptor instead.
 func (*SignedTransactionResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{32}
+	return file_gavine_account_proto_rawDescGZIP(), []int{32}
 }
 
 func (x *SignedTransactionResponse) GetCode() common.ReturnCode {
@@ -2658,7 +2658,7 @@ type VerifyTransactionRequest struct {
 
 func (x *VerifyTransactionRequest) Reset() {
 	*x = VerifyTransactionRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[33]
+	mi := &file_gavine_account_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2670,7 +2670,7 @@ func (x *VerifyTransactionRequest) String() string {
 func (*VerifyTransactionRequest) ProtoMessage() {}
 
 func (x *VerifyTransactionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[33]
+	mi := &file_gavine_account_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2683,7 +2683,7 @@ func (x *VerifyTransactionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VerifyTransactionRequest.ProtoReflect.Descriptor instead.
 func (*VerifyTransactionRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{33}
+	return file_gavine_account_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *VerifyTransactionRequest) GetConsumerToken() string {
@@ -2723,7 +2723,7 @@ func (x *VerifyTransactionRequest) GetSignature() string {
 
 type VerifyTransactionResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Verify        bool                   `protobuf:"varint,3,opt,name=verify,proto3" json:"verify,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2732,7 +2732,7 @@ type VerifyTransactionResponse struct {
 
 func (x *VerifyTransactionResponse) Reset() {
 	*x = VerifyTransactionResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[34]
+	mi := &file_gavine_account_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2744,7 +2744,7 @@ func (x *VerifyTransactionResponse) String() string {
 func (*VerifyTransactionResponse) ProtoMessage() {}
 
 func (x *VerifyTransactionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[34]
+	mi := &file_gavine_account_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2757,7 +2757,7 @@ func (x *VerifyTransactionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VerifyTransactionResponse.ProtoReflect.Descriptor instead.
 func (*VerifyTransactionResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{34}
+	return file_gavine_account_proto_rawDescGZIP(), []int{34}
 }
 
 func (x *VerifyTransactionResponse) GetCode() common.ReturnCode {
@@ -2793,7 +2793,7 @@ type DecodeTransactionRequest struct {
 
 func (x *DecodeTransactionRequest) Reset() {
 	*x = DecodeTransactionRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[35]
+	mi := &file_gavine_account_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2805,7 +2805,7 @@ func (x *DecodeTransactionRequest) String() string {
 func (*DecodeTransactionRequest) ProtoMessage() {}
 
 func (x *DecodeTransactionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[35]
+	mi := &file_gavine_account_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2818,7 +2818,7 @@ func (x *DecodeTransactionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DecodeTransactionRequest.ProtoReflect.Descriptor instead.
 func (*DecodeTransactionRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{35}
+	return file_gavine_account_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *DecodeTransactionRequest) GetConsumerToken() string {
@@ -2851,7 +2851,7 @@ func (x *DecodeTransactionRequest) GetRawTx() string {
 
 type DecodeTransactionResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Base64Tx      string                 `protobuf:"bytes,3,opt,name=base64_tx,json=base64Tx,proto3" json:"base64_tx,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2860,7 +2860,7 @@ type DecodeTransactionResponse struct {
 
 func (x *DecodeTransactionResponse) Reset() {
 	*x = DecodeTransactionResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[36]
+	mi := &file_gavine_account_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2872,7 +2872,7 @@ func (x *DecodeTransactionResponse) String() string {
 func (*DecodeTransactionResponse) ProtoMessage() {}
 
 func (x *DecodeTransactionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[36]
+	mi := &file_gavine_account_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2885,7 +2885,7 @@ func (x *DecodeTransactionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DecodeTransactionResponse.ProtoReflect.Descriptor instead.
 func (*DecodeTransactionResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{36}
+	return file_gavine_account_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *DecodeTransactionResponse) GetCode() common.ReturnCode {
@@ -2922,7 +2922,7 @@ type ExtraDataRequest struct {
 
 func (x *ExtraDataRequest) Reset() {
 	*x = ExtraDataRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[37]
+	mi := &file_gavine_account_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2934,7 +2934,7 @@ func (x *ExtraDataRequest) String() string {
 func (*ExtraDataRequest) ProtoMessage() {}
 
 func (x *ExtraDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[37]
+	mi := &file_gavine_account_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2947,7 +2947,7 @@ func (x *ExtraDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtraDataRequest.ProtoReflect.Descriptor instead.
 func (*ExtraDataRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{37}
+	return file_gavine_account_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *ExtraDataRequest) GetConsumerToken() string {
@@ -2987,7 +2987,7 @@ func (x *ExtraDataRequest) GetCoin() string {
 
 type ExtraDataResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	Value         string                 `protobuf:"bytes,3,opt,name=value,proto3" json:"value,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -2996,7 +2996,7 @@ type ExtraDataResponse struct {
 
 func (x *ExtraDataResponse) Reset() {
 	*x = ExtraDataResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[38]
+	mi := &file_gavine_account_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3008,7 +3008,7 @@ func (x *ExtraDataResponse) String() string {
 func (*ExtraDataResponse) ProtoMessage() {}
 
 func (x *ExtraDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[38]
+	mi := &file_gavine_account_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3021,7 +3021,7 @@ func (x *ExtraDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ExtraDataResponse.ProtoReflect.Descriptor instead.
 func (*ExtraDataResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{38}
+	return file_gavine_account_proto_rawDescGZIP(), []int{38}
 }
 
 func (x *ExtraDataResponse) GetCode() common.ReturnCode {
@@ -3060,7 +3060,7 @@ type NftMessage struct {
 
 func (x *NftMessage) Reset() {
 	*x = NftMessage{}
-	mi := &file_dapplink_account_proto_msgTypes[39]
+	mi := &file_gavine_account_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3072,7 +3072,7 @@ func (x *NftMessage) String() string {
 func (*NftMessage) ProtoMessage() {}
 
 func (x *NftMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[39]
+	mi := &file_gavine_account_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3085,7 +3085,7 @@ func (x *NftMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftMessage.ProtoReflect.Descriptor instead.
 func (*NftMessage) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{39}
+	return file_gavine_account_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *NftMessage) GetTokenContractAddress() string {
@@ -3153,7 +3153,7 @@ type NftAddressRequest struct {
 
 func (x *NftAddressRequest) Reset() {
 	*x = NftAddressRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[40]
+	mi := &file_gavine_account_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3165,7 +3165,7 @@ func (x *NftAddressRequest) String() string {
 func (*NftAddressRequest) ProtoMessage() {}
 
 func (x *NftAddressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[40]
+	mi := &file_gavine_account_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3178,7 +3178,7 @@ func (x *NftAddressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftAddressRequest.ProtoReflect.Descriptor instead.
 func (*NftAddressRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{40}
+	return file_gavine_account_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *NftAddressRequest) GetConsumerToken() string {
@@ -3239,7 +3239,7 @@ func (x *NftAddressRequest) GetPagesize() uint32 {
 
 type NftAddressResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code          common.ReturnCode      `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg           string                 `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	NftInfo       []*NftMessage          `protobuf:"bytes,3,rep,name=nft_info,json=nftInfo,proto3" json:"nft_info,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -3248,7 +3248,7 @@ type NftAddressResponse struct {
 
 func (x *NftAddressResponse) Reset() {
 	*x = NftAddressResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[41]
+	mi := &file_gavine_account_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3260,7 +3260,7 @@ func (x *NftAddressResponse) String() string {
 func (*NftAddressResponse) ProtoMessage() {}
 
 func (x *NftAddressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[41]
+	mi := &file_gavine_account_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3273,7 +3273,7 @@ func (x *NftAddressResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftAddressResponse.ProtoReflect.Descriptor instead.
 func (*NftAddressResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{41}
+	return file_gavine_account_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *NftAddressResponse) GetCode() common.ReturnCode {
@@ -3315,7 +3315,7 @@ type NftCollectionMessage struct {
 
 func (x *NftCollectionMessage) Reset() {
 	*x = NftCollectionMessage{}
-	mi := &file_dapplink_account_proto_msgTypes[42]
+	mi := &file_gavine_account_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3327,7 +3327,7 @@ func (x *NftCollectionMessage) String() string {
 func (*NftCollectionMessage) ProtoMessage() {}
 
 func (x *NftCollectionMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[42]
+	mi := &file_gavine_account_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3340,7 +3340,7 @@ func (x *NftCollectionMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftCollectionMessage.ProtoReflect.Descriptor instead.
 func (*NftCollectionMessage) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{42}
+	return file_gavine_account_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *NftCollectionMessage) GetTokenId() string {
@@ -3429,7 +3429,7 @@ type NftCollectionRequest struct {
 
 func (x *NftCollectionRequest) Reset() {
 	*x = NftCollectionRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[43]
+	mi := &file_gavine_account_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3441,7 +3441,7 @@ func (x *NftCollectionRequest) String() string {
 func (*NftCollectionRequest) ProtoMessage() {}
 
 func (x *NftCollectionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[43]
+	mi := &file_gavine_account_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3454,7 +3454,7 @@ func (x *NftCollectionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftCollectionRequest.ProtoReflect.Descriptor instead.
 func (*NftCollectionRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{43}
+	return file_gavine_account_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *NftCollectionRequest) GetConsumerToken() string {
@@ -3515,7 +3515,7 @@ func (x *NftCollectionRequest) GetPagesize() uint32 {
 
 type NftCollectionResponse struct {
 	state                protoimpl.MessageState  `protogen:"open.v1"`
-	Code                 common.ReturnCode       `protobuf:"varint,1,opt,name=code,proto3,enum=dapplink.ReturnCode" json:"code,omitempty"`
+	Code                 common.ReturnCode       `protobuf:"varint,1,opt,name=code,proto3,enum=gavine.ReturnCode" json:"code,omitempty"`
 	Msg                  string                  `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
 	NftCollectionMessage []*NftCollectionMessage `protobuf:"bytes,3,rep,name=nft_collection_message,json=nftCollectionMessage,proto3" json:"nft_collection_message,omitempty"`
 	unknownFields        protoimpl.UnknownFields
@@ -3524,7 +3524,7 @@ type NftCollectionResponse struct {
 
 func (x *NftCollectionResponse) Reset() {
 	*x = NftCollectionResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[44]
+	mi := &file_gavine_account_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3536,7 +3536,7 @@ func (x *NftCollectionResponse) String() string {
 func (*NftCollectionResponse) ProtoMessage() {}
 
 func (x *NftCollectionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[44]
+	mi := &file_gavine_account_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3549,7 +3549,7 @@ func (x *NftCollectionResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftCollectionResponse.ProtoReflect.Descriptor instead.
 func (*NftCollectionResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{44}
+	return file_gavine_account_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *NftCollectionResponse) GetCode() common.ReturnCode {
@@ -3581,7 +3581,7 @@ type NftDetailRequest struct {
 
 func (x *NftDetailRequest) Reset() {
 	*x = NftDetailRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[45]
+	mi := &file_gavine_account_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3593,7 +3593,7 @@ func (x *NftDetailRequest) String() string {
 func (*NftDetailRequest) ProtoMessage() {}
 
 func (x *NftDetailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[45]
+	mi := &file_gavine_account_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3606,7 +3606,7 @@ func (x *NftDetailRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftDetailRequest.ProtoReflect.Descriptor instead.
 func (*NftDetailRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{45}
+	return file_gavine_account_proto_rawDescGZIP(), []int{45}
 }
 
 type NftDetailResponse struct {
@@ -3617,7 +3617,7 @@ type NftDetailResponse struct {
 
 func (x *NftDetailResponse) Reset() {
 	*x = NftDetailResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[46]
+	mi := &file_gavine_account_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3629,7 +3629,7 @@ func (x *NftDetailResponse) String() string {
 func (*NftDetailResponse) ProtoMessage() {}
 
 func (x *NftDetailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[46]
+	mi := &file_gavine_account_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3642,7 +3642,7 @@ func (x *NftDetailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftDetailResponse.ProtoReflect.Descriptor instead.
 func (*NftDetailResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{46}
+	return file_gavine_account_proto_rawDescGZIP(), []int{46}
 }
 
 type NftHolderListRequest struct {
@@ -3653,7 +3653,7 @@ type NftHolderListRequest struct {
 
 func (x *NftHolderListRequest) Reset() {
 	*x = NftHolderListRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[47]
+	mi := &file_gavine_account_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3665,7 +3665,7 @@ func (x *NftHolderListRequest) String() string {
 func (*NftHolderListRequest) ProtoMessage() {}
 
 func (x *NftHolderListRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[47]
+	mi := &file_gavine_account_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3678,7 +3678,7 @@ func (x *NftHolderListRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftHolderListRequest.ProtoReflect.Descriptor instead.
 func (*NftHolderListRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{47}
+	return file_gavine_account_proto_rawDescGZIP(), []int{47}
 }
 
 type NftHolderListResponse struct {
@@ -3689,7 +3689,7 @@ type NftHolderListResponse struct {
 
 func (x *NftHolderListResponse) Reset() {
 	*x = NftHolderListResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[48]
+	mi := &file_gavine_account_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3701,7 +3701,7 @@ func (x *NftHolderListResponse) String() string {
 func (*NftHolderListResponse) ProtoMessage() {}
 
 func (x *NftHolderListResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[48]
+	mi := &file_gavine_account_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3714,7 +3714,7 @@ func (x *NftHolderListResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftHolderListResponse.ProtoReflect.Descriptor instead.
 func (*NftHolderListResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{48}
+	return file_gavine_account_proto_rawDescGZIP(), []int{48}
 }
 
 type NftTradeHistoryRequest struct {
@@ -3725,7 +3725,7 @@ type NftTradeHistoryRequest struct {
 
 func (x *NftTradeHistoryRequest) Reset() {
 	*x = NftTradeHistoryRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[49]
+	mi := &file_gavine_account_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3737,7 +3737,7 @@ func (x *NftTradeHistoryRequest) String() string {
 func (*NftTradeHistoryRequest) ProtoMessage() {}
 
 func (x *NftTradeHistoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[49]
+	mi := &file_gavine_account_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3750,7 +3750,7 @@ func (x *NftTradeHistoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftTradeHistoryRequest.ProtoReflect.Descriptor instead.
 func (*NftTradeHistoryRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{49}
+	return file_gavine_account_proto_rawDescGZIP(), []int{49}
 }
 
 type NftTradeHistoryResponse struct {
@@ -3761,7 +3761,7 @@ type NftTradeHistoryResponse struct {
 
 func (x *NftTradeHistoryResponse) Reset() {
 	*x = NftTradeHistoryResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[50]
+	mi := &file_gavine_account_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3773,7 +3773,7 @@ func (x *NftTradeHistoryResponse) String() string {
 func (*NftTradeHistoryResponse) ProtoMessage() {}
 
 func (x *NftTradeHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[50]
+	mi := &file_gavine_account_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3786,7 +3786,7 @@ func (x *NftTradeHistoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NftTradeHistoryResponse.ProtoReflect.Descriptor instead.
 func (*NftTradeHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{50}
+	return file_gavine_account_proto_rawDescGZIP(), []int{50}
 }
 
 type AddressNftTradeHistoryRequest struct {
@@ -3797,7 +3797,7 @@ type AddressNftTradeHistoryRequest struct {
 
 func (x *AddressNftTradeHistoryRequest) Reset() {
 	*x = AddressNftTradeHistoryRequest{}
-	mi := &file_dapplink_account_proto_msgTypes[51]
+	mi := &file_gavine_account_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3809,7 +3809,7 @@ func (x *AddressNftTradeHistoryRequest) String() string {
 func (*AddressNftTradeHistoryRequest) ProtoMessage() {}
 
 func (x *AddressNftTradeHistoryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[51]
+	mi := &file_gavine_account_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3822,7 +3822,7 @@ func (x *AddressNftTradeHistoryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressNftTradeHistoryRequest.ProtoReflect.Descriptor instead.
 func (*AddressNftTradeHistoryRequest) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{51}
+	return file_gavine_account_proto_rawDescGZIP(), []int{51}
 }
 
 type AddressNftTradeHistoryResponse struct {
@@ -3833,7 +3833,7 @@ type AddressNftTradeHistoryResponse struct {
 
 func (x *AddressNftTradeHistoryResponse) Reset() {
 	*x = AddressNftTradeHistoryResponse{}
-	mi := &file_dapplink_account_proto_msgTypes[52]
+	mi := &file_gavine_account_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3845,7 +3845,7 @@ func (x *AddressNftTradeHistoryResponse) String() string {
 func (*AddressNftTradeHistoryResponse) ProtoMessage() {}
 
 func (x *AddressNftTradeHistoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_dapplink_account_proto_msgTypes[52]
+	mi := &file_gavine_account_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3858,12 +3858,12 @@ func (x *AddressNftTradeHistoryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddressNftTradeHistoryResponse.ProtoReflect.Descriptor instead.
 func (*AddressNftTradeHistoryResponse) Descriptor() ([]byte, []int) {
-	return file_dapplink_account_proto_rawDescGZIP(), []int{52}
+	return file_gavine_account_proto_rawDescGZIP(), []int{52}
 }
 
-var File_dapplink_account_proto protoreflect.FileDescriptor
+var File_gavine_account_proto protoreflect.FileDescriptor
 
-var file_dapplink_account_proto_rawDesc = string([]byte{
+var file_gavine_account_proto_rawDesc = string([]byte{
 	0x0a, 0x16, 0x64, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x6e, 0x6b, 0x2f, 0x61, 0x63, 0x63, 0x6f, 0x75,
 	0x6e, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x10, 0x64, 0x61, 0x70, 0x70, 0x6c, 0x69,
 	0x6e, 0x6b, 0x2e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x1a, 0x15, 0x64, 0x61, 0x70, 0x70,
@@ -4547,152 +4547,152 @@ var file_dapplink_account_proto_rawDesc = string([]byte{
 })
 
 var (
-	file_dapplink_account_proto_rawDescOnce sync.Once
-	file_dapplink_account_proto_rawDescData []byte
+	file_gavine_account_proto_rawDescOnce sync.Once
+	file_gavine_account_proto_rawDescData []byte
 )
 
-func file_dapplink_account_proto_rawDescGZIP() []byte {
-	file_dapplink_account_proto_rawDescOnce.Do(func() {
-		file_dapplink_account_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_dapplink_account_proto_rawDesc), len(file_dapplink_account_proto_rawDesc)))
+func file_gavine_account_proto_rawDescGZIP() []byte {
+	file_gavine_account_proto_rawDescOnce.Do(func() {
+		file_gavine_account_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_gavine_account_proto_rawDesc), len(file_gavine_account_proto_rawDesc)))
 	})
-	return file_dapplink_account_proto_rawDescData
+	return file_gavine_account_proto_rawDescData
 }
 
-var file_dapplink_account_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_dapplink_account_proto_msgTypes = make([]protoimpl.MessageInfo, 53)
-var file_dapplink_account_proto_goTypes = []any{
-	(TxStatus)(0),                          // 0: dapplink.account.TxStatus
-	(*TxMessage)(nil),                      // 1: dapplink.account.TxMessage
-	(*BlockData)(nil),                      // 2: dapplink.account.BlockData
-	(*BlockHeader)(nil),                    // 3: dapplink.account.BlockHeader
-	(*Log)(nil),                            // 4: dapplink.account.Log
-	(*SupportChainsRequest)(nil),           // 5: dapplink.account.SupportChainsRequest
-	(*SupportChainsResponse)(nil),          // 6: dapplink.account.SupportChainsResponse
-	(*ConvertAddressRequest)(nil),          // 7: dapplink.account.ConvertAddressRequest
-	(*ConvertAddressResponse)(nil),         // 8: dapplink.account.ConvertAddressResponse
-	(*ValidAddressRequest)(nil),            // 9: dapplink.account.ValidAddressRequest
-	(*ValidAddressResponse)(nil),           // 10: dapplink.account.ValidAddressResponse
-	(*BlockNumberRequest)(nil),             // 11: dapplink.account.BlockNumberRequest
-	(*BlockHashRequest)(nil),               // 12: dapplink.account.BlockHashRequest
-	(*BlockInfoTransactionList)(nil),       // 13: dapplink.account.BlockInfoTransactionList
-	(*BlockResponse)(nil),                  // 14: dapplink.account.BlockResponse
-	(*BlockHeaderHashRequest)(nil),         // 15: dapplink.account.BlockHeaderHashRequest
-	(*BlockHeaderNumberRequest)(nil),       // 16: dapplink.account.BlockHeaderNumberRequest
-	(*BlockHeaderResponse)(nil),            // 17: dapplink.account.BlockHeaderResponse
-	(*BlockByRangeRequest)(nil),            // 18: dapplink.account.BlockByRangeRequest
-	(*BlockByRangeResponse)(nil),           // 19: dapplink.account.BlockByRangeResponse
-	(*AccountRequest)(nil),                 // 20: dapplink.account.AccountRequest
-	(*AccountResponse)(nil),                // 21: dapplink.account.AccountResponse
-	(*FeeRequest)(nil),                     // 22: dapplink.account.FeeRequest
-	(*FeeResponse)(nil),                    // 23: dapplink.account.FeeResponse
-	(*SendTxRequest)(nil),                  // 24: dapplink.account.SendTxRequest
-	(*SendTxResponse)(nil),                 // 25: dapplink.account.SendTxResponse
-	(*TxAddressRequest)(nil),               // 26: dapplink.account.TxAddressRequest
-	(*TxAddressResponse)(nil),              // 27: dapplink.account.TxAddressResponse
-	(*TxHashRequest)(nil),                  // 28: dapplink.account.TxHashRequest
-	(*TxHashResponse)(nil),                 // 29: dapplink.account.TxHashResponse
-	(*UnSignTransactionRequest)(nil),       // 30: dapplink.account.UnSignTransactionRequest
-	(*UnSignTransactionResponse)(nil),      // 31: dapplink.account.UnSignTransactionResponse
-	(*SignedTransactionRequest)(nil),       // 32: dapplink.account.SignedTransactionRequest
-	(*SignedTransactionResponse)(nil),      // 33: dapplink.account.SignedTransactionResponse
-	(*VerifyTransactionRequest)(nil),       // 34: dapplink.account.VerifyTransactionRequest
-	(*VerifyTransactionResponse)(nil),      // 35: dapplink.account.VerifyTransactionResponse
-	(*DecodeTransactionRequest)(nil),       // 36: dapplink.account.DecodeTransactionRequest
-	(*DecodeTransactionResponse)(nil),      // 37: dapplink.account.DecodeTransactionResponse
-	(*ExtraDataRequest)(nil),               // 38: dapplink.account.ExtraDataRequest
-	(*ExtraDataResponse)(nil),              // 39: dapplink.account.ExtraDataResponse
-	(*NftMessage)(nil),                     // 40: dapplink.account.NftMessage
-	(*NftAddressRequest)(nil),              // 41: dapplink.account.NftAddressRequest
-	(*NftAddressResponse)(nil),             // 42: dapplink.account.NftAddressResponse
-	(*NftCollectionMessage)(nil),           // 43: dapplink.account.NftCollectionMessage
-	(*NftCollectionRequest)(nil),           // 44: dapplink.account.NftCollectionRequest
-	(*NftCollectionResponse)(nil),          // 45: dapplink.account.NftCollectionResponse
-	(*NftDetailRequest)(nil),               // 46: dapplink.account.NftDetailRequest
-	(*NftDetailResponse)(nil),              // 47: dapplink.account.NftDetailResponse
-	(*NftHolderListRequest)(nil),           // 48: dapplink.account.NftHolderListRequest
-	(*NftHolderListResponse)(nil),          // 49: dapplink.account.NftHolderListResponse
-	(*NftTradeHistoryRequest)(nil),         // 50: dapplink.account.NftTradeHistoryRequest
-	(*NftTradeHistoryResponse)(nil),        // 51: dapplink.account.NftTradeHistoryResponse
-	(*AddressNftTradeHistoryRequest)(nil),  // 52: dapplink.account.AddressNftTradeHistoryRequest
-	(*AddressNftTradeHistoryResponse)(nil), // 53: dapplink.account.AddressNftTradeHistoryResponse
-	(common.ReturnCode)(0),                 // 54: dapplink.ReturnCode
+var file_gavine_account_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_gavine_account_proto_msgTypes = make([]protoimpl.MessageInfo, 53)
+var file_gavine_account_proto_goTypes = []any{
+	(TxStatus)(0),                          // 0: gavine.account.TxStatus
+	(*TxMessage)(nil),                      // 1: gavine.account.TxMessage
+	(*BlockData)(nil),                      // 2: gavine.account.BlockData
+	(*BlockHeader)(nil),                    // 3: gavine.account.BlockHeader
+	(*Log)(nil),                            // 4: gavine.account.Log
+	(*SupportChainsRequest)(nil),           // 5: gavine.account.SupportChainsRequest
+	(*SupportChainsResponse)(nil),          // 6: gavine.account.SupportChainsResponse
+	(*ConvertAddressRequest)(nil),          // 7: gavine.account.ConvertAddressRequest
+	(*ConvertAddressResponse)(nil),         // 8: gavine.account.ConvertAddressResponse
+	(*ValidAddressRequest)(nil),            // 9: gavine.account.ValidAddressRequest
+	(*ValidAddressResponse)(nil),           // 10: gavine.account.ValidAddressResponse
+	(*BlockNumberRequest)(nil),             // 11: gavine.account.BlockNumberRequest
+	(*BlockHashRequest)(nil),               // 12: gavine.account.BlockHashRequest
+	(*BlockInfoTransactionList)(nil),       // 13: gavine.account.BlockInfoTransactionList
+	(*BlockResponse)(nil),                  // 14: gavine.account.BlockResponse
+	(*BlockHeaderHashRequest)(nil),         // 15: gavine.account.BlockHeaderHashRequest
+	(*BlockHeaderNumberRequest)(nil),       // 16: gavine.account.BlockHeaderNumberRequest
+	(*BlockHeaderResponse)(nil),            // 17: gavine.account.BlockHeaderResponse
+	(*BlockByRangeRequest)(nil),            // 18: gavine.account.BlockByRangeRequest
+	(*BlockByRangeResponse)(nil),           // 19: gavine.account.BlockByRangeResponse
+	(*AccountRequest)(nil),                 // 20: gavine.account.AccountRequest
+	(*AccountResponse)(nil),                // 21: gavine.account.AccountResponse
+	(*FeeRequest)(nil),                     // 22: gavine.account.FeeRequest
+	(*FeeResponse)(nil),                    // 23: gavine.account.FeeResponse
+	(*SendTxRequest)(nil),                  // 24: gavine.account.SendTxRequest
+	(*SendTxResponse)(nil),                 // 25: gavine.account.SendTxResponse
+	(*TxAddressRequest)(nil),               // 26: gavine.account.TxAddressRequest
+	(*TxAddressResponse)(nil),              // 27: gavine.account.TxAddressResponse
+	(*TxHashRequest)(nil),                  // 28: gavine.account.TxHashRequest
+	(*TxHashResponse)(nil),                 // 29: gavine.account.TxHashResponse
+	(*UnSignTransactionRequest)(nil),       // 30: gavine.account.UnSignTransactionRequest
+	(*UnSignTransactionResponse)(nil),      // 31: gavine.account.UnSignTransactionResponse
+	(*SignedTransactionRequest)(nil),       // 32: gavine.account.SignedTransactionRequest
+	(*SignedTransactionResponse)(nil),      // 33: gavine.account.SignedTransactionResponse
+	(*VerifyTransactionRequest)(nil),       // 34: gavine.account.VerifyTransactionRequest
+	(*VerifyTransactionResponse)(nil),      // 35: gavine.account.VerifyTransactionResponse
+	(*DecodeTransactionRequest)(nil),       // 36: gavine.account.DecodeTransactionRequest
+	(*DecodeTransactionResponse)(nil),      // 37: gavine.account.DecodeTransactionResponse
+	(*ExtraDataRequest)(nil),               // 38: gavine.account.ExtraDataRequest
+	(*ExtraDataResponse)(nil),              // 39: gavine.account.ExtraDataResponse
+	(*NftMessage)(nil),                     // 40: gavine.account.NftMessage
+	(*NftAddressRequest)(nil),              // 41: gavine.account.NftAddressRequest
+	(*NftAddressResponse)(nil),             // 42: gavine.account.NftAddressResponse
+	(*NftCollectionMessage)(nil),           // 43: gavine.account.NftCollectionMessage
+	(*NftCollectionRequest)(nil),           // 44: gavine.account.NftCollectionRequest
+	(*NftCollectionResponse)(nil),          // 45: gavine.account.NftCollectionResponse
+	(*NftDetailRequest)(nil),               // 46: gavine.account.NftDetailRequest
+	(*NftDetailResponse)(nil),              // 47: gavine.account.NftDetailResponse
+	(*NftHolderListRequest)(nil),           // 48: gavine.account.NftHolderListRequest
+	(*NftHolderListResponse)(nil),          // 49: gavine.account.NftHolderListResponse
+	(*NftTradeHistoryRequest)(nil),         // 50: gavine.account.NftTradeHistoryRequest
+	(*NftTradeHistoryResponse)(nil),        // 51: gavine.account.NftTradeHistoryResponse
+	(*AddressNftTradeHistoryRequest)(nil),  // 52: gavine.account.AddressNftTradeHistoryRequest
+	(*AddressNftTradeHistoryResponse)(nil), // 53: gavine.account.AddressNftTradeHistoryResponse
+	(common.ReturnCode)(0),                 // 54: gavine.ReturnCode
 }
-var file_dapplink_account_proto_depIdxs = []int32{
-	0,  // 0: dapplink.account.TxMessage.status:type_name -> dapplink.account.TxStatus
-	1,  // 1: dapplink.account.BlockData.transactions:type_name -> dapplink.account.TxMessage
-	54, // 2: dapplink.account.SupportChainsResponse.code:type_name -> dapplink.ReturnCode
-	54, // 3: dapplink.account.ConvertAddressResponse.code:type_name -> dapplink.ReturnCode
-	54, // 4: dapplink.account.ValidAddressResponse.code:type_name -> dapplink.ReturnCode
-	54, // 5: dapplink.account.BlockResponse.code:type_name -> dapplink.ReturnCode
-	13, // 6: dapplink.account.BlockResponse.transactions:type_name -> dapplink.account.BlockInfoTransactionList
-	54, // 7: dapplink.account.BlockHeaderResponse.code:type_name -> dapplink.ReturnCode
-	3,  // 8: dapplink.account.BlockHeaderResponse.block_header:type_name -> dapplink.account.BlockHeader
-	54, // 9: dapplink.account.BlockByRangeResponse.code:type_name -> dapplink.ReturnCode
-	3,  // 10: dapplink.account.BlockByRangeResponse.block_header:type_name -> dapplink.account.BlockHeader
-	54, // 11: dapplink.account.AccountResponse.code:type_name -> dapplink.ReturnCode
-	54, // 12: dapplink.account.FeeResponse.code:type_name -> dapplink.ReturnCode
-	54, // 13: dapplink.account.SendTxResponse.code:type_name -> dapplink.ReturnCode
-	54, // 14: dapplink.account.TxAddressResponse.code:type_name -> dapplink.ReturnCode
-	1,  // 15: dapplink.account.TxAddressResponse.tx:type_name -> dapplink.account.TxMessage
-	54, // 16: dapplink.account.TxHashResponse.code:type_name -> dapplink.ReturnCode
-	1,  // 17: dapplink.account.TxHashResponse.tx:type_name -> dapplink.account.TxMessage
-	54, // 18: dapplink.account.UnSignTransactionResponse.code:type_name -> dapplink.ReturnCode
-	54, // 19: dapplink.account.SignedTransactionResponse.code:type_name -> dapplink.ReturnCode
-	54, // 20: dapplink.account.VerifyTransactionResponse.code:type_name -> dapplink.ReturnCode
-	54, // 21: dapplink.account.DecodeTransactionResponse.code:type_name -> dapplink.ReturnCode
-	54, // 22: dapplink.account.ExtraDataResponse.code:type_name -> dapplink.ReturnCode
-	54, // 23: dapplink.account.NftAddressResponse.code:type_name -> dapplink.ReturnCode
-	40, // 24: dapplink.account.NftAddressResponse.nft_info:type_name -> dapplink.account.NftMessage
-	54, // 25: dapplink.account.NftCollectionResponse.code:type_name -> dapplink.ReturnCode
-	43, // 26: dapplink.account.NftCollectionResponse.nft_collection_message:type_name -> dapplink.account.NftCollectionMessage
-	5,  // 27: dapplink.account.WalletAccountService.getSupportChains:input_type -> dapplink.account.SupportChainsRequest
-	7,  // 28: dapplink.account.WalletAccountService.convertAddress:input_type -> dapplink.account.ConvertAddressRequest
-	9,  // 29: dapplink.account.WalletAccountService.validAddress:input_type -> dapplink.account.ValidAddressRequest
-	11, // 30: dapplink.account.WalletAccountService.getBlockByNumber:input_type -> dapplink.account.BlockNumberRequest
-	12, // 31: dapplink.account.WalletAccountService.getBlockByHash:input_type -> dapplink.account.BlockHashRequest
-	15, // 32: dapplink.account.WalletAccountService.getBlockHeaderByHash:input_type -> dapplink.account.BlockHeaderHashRequest
-	16, // 33: dapplink.account.WalletAccountService.getBlockHeaderByNumber:input_type -> dapplink.account.BlockHeaderNumberRequest
-	18, // 34: dapplink.account.WalletAccountService.getBlockHeaderByRange:input_type -> dapplink.account.BlockByRangeRequest
-	20, // 35: dapplink.account.WalletAccountService.getAccount:input_type -> dapplink.account.AccountRequest
-	22, // 36: dapplink.account.WalletAccountService.getFee:input_type -> dapplink.account.FeeRequest
-	24, // 37: dapplink.account.WalletAccountService.SendTx:input_type -> dapplink.account.SendTxRequest
-	26, // 38: dapplink.account.WalletAccountService.getTxByAddress:input_type -> dapplink.account.TxAddressRequest
-	28, // 39: dapplink.account.WalletAccountService.getTxByHash:input_type -> dapplink.account.TxHashRequest
-	30, // 40: dapplink.account.WalletAccountService.buildUnSignTransaction:input_type -> dapplink.account.UnSignTransactionRequest
-	32, // 41: dapplink.account.WalletAccountService.buildSignedTransaction:input_type -> dapplink.account.SignedTransactionRequest
-	36, // 42: dapplink.account.WalletAccountService.decodeTransaction:input_type -> dapplink.account.DecodeTransactionRequest
-	34, // 43: dapplink.account.WalletAccountService.verifySignedTransaction:input_type -> dapplink.account.VerifyTransactionRequest
-	38, // 44: dapplink.account.WalletAccountService.getExtraData:input_type -> dapplink.account.ExtraDataRequest
-	41, // 45: dapplink.account.WalletAccountService.getNftListByAddress:input_type -> dapplink.account.NftAddressRequest
-	44, // 46: dapplink.account.WalletAccountService.getNftCollection:input_type -> dapplink.account.NftCollectionRequest
-	46, // 47: dapplink.account.WalletAccountService.getNftDetail:input_type -> dapplink.account.NftDetailRequest
-	48, // 48: dapplink.account.WalletAccountService.getNftHolderList:input_type -> dapplink.account.NftHolderListRequest
-	50, // 49: dapplink.account.WalletAccountService.getNftTradeHistory:input_type -> dapplink.account.NftTradeHistoryRequest
-	52, // 50: dapplink.account.WalletAccountService.getAddressNftTradeHistory:input_type -> dapplink.account.AddressNftTradeHistoryRequest
-	6,  // 51: dapplink.account.WalletAccountService.getSupportChains:output_type -> dapplink.account.SupportChainsResponse
-	8,  // 52: dapplink.account.WalletAccountService.convertAddress:output_type -> dapplink.account.ConvertAddressResponse
-	10, // 53: dapplink.account.WalletAccountService.validAddress:output_type -> dapplink.account.ValidAddressResponse
-	14, // 54: dapplink.account.WalletAccountService.getBlockByNumber:output_type -> dapplink.account.BlockResponse
-	14, // 55: dapplink.account.WalletAccountService.getBlockByHash:output_type -> dapplink.account.BlockResponse
-	17, // 56: dapplink.account.WalletAccountService.getBlockHeaderByHash:output_type -> dapplink.account.BlockHeaderResponse
-	17, // 57: dapplink.account.WalletAccountService.getBlockHeaderByNumber:output_type -> dapplink.account.BlockHeaderResponse
-	19, // 58: dapplink.account.WalletAccountService.getBlockHeaderByRange:output_type -> dapplink.account.BlockByRangeResponse
-	21, // 59: dapplink.account.WalletAccountService.getAccount:output_type -> dapplink.account.AccountResponse
-	23, // 60: dapplink.account.WalletAccountService.getFee:output_type -> dapplink.account.FeeResponse
-	25, // 61: dapplink.account.WalletAccountService.SendTx:output_type -> dapplink.account.SendTxResponse
-	27, // 62: dapplink.account.WalletAccountService.getTxByAddress:output_type -> dapplink.account.TxAddressResponse
-	29, // 63: dapplink.account.WalletAccountService.getTxByHash:output_type -> dapplink.account.TxHashResponse
-	31, // 64: dapplink.account.WalletAccountService.buildUnSignTransaction:output_type -> dapplink.account.UnSignTransactionResponse
-	33, // 65: dapplink.account.WalletAccountService.buildSignedTransaction:output_type -> dapplink.account.SignedTransactionResponse
-	37, // 66: dapplink.account.WalletAccountService.decodeTransaction:output_type -> dapplink.account.DecodeTransactionResponse
-	35, // 67: dapplink.account.WalletAccountService.verifySignedTransaction:output_type -> dapplink.account.VerifyTransactionResponse
-	39, // 68: dapplink.account.WalletAccountService.getExtraData:output_type -> dapplink.account.ExtraDataResponse
-	42, // 69: dapplink.account.WalletAccountService.getNftListByAddress:output_type -> dapplink.account.NftAddressResponse
-	45, // 70: dapplink.account.WalletAccountService.getNftCollection:output_type -> dapplink.account.NftCollectionResponse
-	47, // 71: dapplink.account.WalletAccountService.getNftDetail:output_type -> dapplink.account.NftDetailResponse
-	49, // 72: dapplink.account.WalletAccountService.getNftHolderList:output_type -> dapplink.account.NftHolderListResponse
-	51, // 73: dapplink.account.WalletAccountService.getNftTradeHistory:output_type -> dapplink.account.NftTradeHistoryResponse
-	53, // 74: dapplink.account.WalletAccountService.getAddressNftTradeHistory:output_type -> dapplink.account.AddressNftTradeHistoryResponse
+var file_gavine_account_proto_depIdxs = []int32{
+	0,  // 0: gavine.account.TxMessage.status:type_name -> gavine.account.TxStatus
+	1,  // 1: gavine.account.BlockData.transactions:type_name -> gavine.account.TxMessage
+	54, // 2: gavine.account.SupportChainsResponse.code:type_name -> gavine.ReturnCode
+	54, // 3: gavine.account.ConvertAddressResponse.code:type_name -> gavine.ReturnCode
+	54, // 4: gavine.account.ValidAddressResponse.code:type_name -> gavine.ReturnCode
+	54, // 5: gavine.account.BlockResponse.code:type_name -> gavine.ReturnCode
+	13, // 6: gavine.account.BlockResponse.transactions:type_name -> gavine.account.BlockInfoTransactionList
+	54, // 7: gavine.account.BlockHeaderResponse.code:type_name -> gavine.ReturnCode
+	3,  // 8: gavine.account.BlockHeaderResponse.block_header:type_name -> gavine.account.BlockHeader
+	54, // 9: gavine.account.BlockByRangeResponse.code:type_name -> gavine.ReturnCode
+	3,  // 10: gavine.account.BlockByRangeResponse.block_header:type_name -> gavine.account.BlockHeader
+	54, // 11: gavine.account.AccountResponse.code:type_name -> gavine.ReturnCode
+	54, // 12: gavine.account.FeeResponse.code:type_name -> gavine.ReturnCode
+	54, // 13: gavine.account.SendTxResponse.code:type_name -> gavine.ReturnCode
+	54, // 14: gavine.account.TxAddressResponse.code:type_name -> gavine.ReturnCode
+	1,  // 15: gavine.account.TxAddressResponse.tx:type_name -> gavine.account.TxMessage
+	54, // 16: gavine.account.TxHashResponse.code:type_name -> gavine.ReturnCode
+	1,  // 17: gavine.account.TxHashResponse.tx:type_name -> gavine.account.TxMessage
+	54, // 18: gavine.account.UnSignTransactionResponse.code:type_name -> gavine.ReturnCode
+	54, // 19: gavine.account.SignedTransactionResponse.code:type_name -> gavine.ReturnCode
+	54, // 20: gavine.account.VerifyTransactionResponse.code:type_name -> gavine.ReturnCode
+	54, // 21: gavine.account.DecodeTransactionResponse.code:type_name -> gavine.ReturnCode
+	54, // 22: gavine.account.ExtraDataResponse.code:type_name -> gavine.ReturnCode
+	54, // 23: gavine.account.NftAddressResponse.code:type_name -> gavine.ReturnCode
+	40, // 24: gavine.account.NftAddressResponse.nft_info:type_name -> gavine.account.NftMessage
+	54, // 25: gavine.account.NftCollectionResponse.code:type_name -> gavine.ReturnCode
+	43, // 26: gavine.account.NftCollectionResponse.nft_collection_message:type_name -> gavine.account.NftCollectionMessage
+	5,  // 27: gavine.account.WalletAccountService.getSupportChains:input_type -> gavine.account.SupportChainsRequest
+	7,  // 28: gavine.account.WalletAccountService.convertAddress:input_type -> gavine.account.ConvertAddressRequest
+	9,  // 29: gavine.account.WalletAccountService.validAddress:input_type -> gavine.account.ValidAddressRequest
+	11, // 30: gavine.account.WalletAccountService.getBlockByNumber:input_type -> gavine.account.BlockNumberRequest
+	12, // 31: gavine.account.WalletAccountService.getBlockByHash:input_type -> gavine.account.BlockHashRequest
+	15, // 32: gavine.account.WalletAccountService.getBlockHeaderByHash:input_type -> gavine.account.BlockHeaderHashRequest
+	16, // 33: gavine.account.WalletAccountService.getBlockHeaderByNumber:input_type -> gavine.account.BlockHeaderNumberRequest
+	18, // 34: gavine.account.WalletAccountService.getBlockHeaderByRange:input_type -> gavine.account.BlockByRangeRequest
+	20, // 35: gavine.account.WalletAccountService.getAccount:input_type -> gavine.account.AccountRequest
+	22, // 36: gavine.account.WalletAccountService.getFee:input_type -> gavine.account.FeeRequest
+	24, // 37: gavine.account.WalletAccountService.SendTx:input_type -> gavine.account.SendTxRequest
+	26, // 38: gavine.account.WalletAccountService.getTxByAddress:input_type -> gavine.account.TxAddressRequest
+	28, // 39: gavine.account.WalletAccountService.getTxByHash:input_type -> gavine.account.TxHashRequest
+	30, // 40: gavine.account.WalletAccountService.buildUnSignTransaction:input_type -> gavine.account.UnSignTransactionRequest
+	32, // 41: gavine.account.WalletAccountService.buildSignedTransaction:input_type -> gavine.account.SignedTransactionRequest
+	36, // 42: gavine.account.WalletAccountService.decodeTransaction:input_type -> gavine.account.DecodeTransactionRequest
+	34, // 43: gavine.account.WalletAccountService.verifySignedTransaction:input_type -> gavine.account.VerifyTransactionRequest
+	38, // 44: gavine.account.WalletAccountService.getExtraData:input_type -> gavine.account.ExtraDataRequest
+	41, // 45: gavine.account.WalletAccountService.getNftListByAddress:input_type -> gavine.account.NftAddressRequest
+	44, // 46: gavine.account.WalletAccountService.getNftCollection:input_type -> gavine.account.NftCollectionRequest
+	46, // 47: gavine.account.WalletAccountService.getNftDetail:input_type -> gavine.account.NftDetailRequest
+	48, // 48: gavine.account.WalletAccountService.getNftHolderList:input_type -> gavine.account.NftHolderListRequest
+	50, // 49: gavine.account.WalletAccountService.getNftTradeHistory:input_type -> gavine.account.NftTradeHistoryRequest
+	52, // 50: gavine.account.WalletAccountService.getAddressNftTradeHistory:input_type -> gavine.account.AddressNftTradeHistoryRequest
+	6,  // 51: gavine.account.WalletAccountService.getSupportChains:output_type -> gavine.account.SupportChainsResponse
+	8,  // 52: gavine.account.WalletAccountService.convertAddress:output_type -> gavine.account.ConvertAddressResponse
+	10, // 53: gavine.account.WalletAccountService.validAddress:output_type -> gavine.account.ValidAddressResponse
+	14, // 54: gavine.account.WalletAccountService.getBlockByNumber:output_type -> gavine.account.BlockResponse
+	14, // 55: gavine.account.WalletAccountService.getBlockByHash:output_type -> gavine.account.BlockResponse
+	17, // 56: gavine.account.WalletAccountService.getBlockHeaderByHash:output_type -> gavine.account.BlockHeaderResponse
+	17, // 57: gavine.account.WalletAccountService.getBlockHeaderByNumber:output_type -> gavine.account.BlockHeaderResponse
+	19, // 58: gavine.account.WalletAccountService.getBlockHeaderByRange:output_type -> gavine.account.BlockByRangeResponse
+	21, // 59: gavine.account.WalletAccountService.getAccount:output_type -> gavine.account.AccountResponse
+	23, // 60: gavine.account.WalletAccountService.getFee:output_type -> gavine.account.FeeResponse
+	25, // 61: gavine.account.WalletAccountService.SendTx:output_type -> gavine.account.SendTxResponse
+	27, // 62: gavine.account.WalletAccountService.getTxByAddress:output_type -> gavine.account.TxAddressResponse
+	29, // 63: gavine.account.WalletAccountService.getTxByHash:output_type -> gavine.account.TxHashResponse
+	31, // 64: gavine.account.WalletAccountService.buildUnSignTransaction:output_type -> gavine.account.UnSignTransactionResponse
+	33, // 65: gavine.account.WalletAccountService.buildSignedTransaction:output_type -> gavine.account.SignedTransactionResponse
+	37, // 66: gavine.account.WalletAccountService.decodeTransaction:output_type -> gavine.account.DecodeTransactionResponse
+	35, // 67: gavine.account.WalletAccountService.verifySignedTransaction:output_type -> gavine.account.VerifyTransactionResponse
+	39, // 68: gavine.account.WalletAccountService.getExtraData:output_type -> gavine.account.ExtraDataResponse
+	42, // 69: gavine.account.WalletAccountService.getNftListByAddress:output_type -> gavine.account.NftAddressResponse
+	45, // 70: gavine.account.WalletAccountService.getNftCollection:output_type -> gavine.account.NftCollectionResponse
+	47, // 71: gavine.account.WalletAccountService.getNftDetail:output_type -> gavine.account.NftDetailResponse
+	49, // 72: gavine.account.WalletAccountService.getNftHolderList:output_type -> gavine.account.NftHolderListResponse
+	51, // 73: gavine.account.WalletAccountService.getNftTradeHistory:output_type -> gavine.account.NftTradeHistoryResponse
+	53, // 74: gavine.account.WalletAccountService.getAddressNftTradeHistory:output_type -> gavine.account.AddressNftTradeHistoryResponse
 	51, // [51:75] is the sub-list for method output_type
 	27, // [27:51] is the sub-list for method input_type
 	27, // [27:27] is the sub-list for extension type_name
@@ -4700,27 +4700,27 @@ var file_dapplink_account_proto_depIdxs = []int32{
 	0,  // [0:27] is the sub-list for field type_name
 }
 
-func init() { file_dapplink_account_proto_init() }
-func file_dapplink_account_proto_init() {
-	if File_dapplink_account_proto != nil {
+func init() { file_gavine_account_proto_init() }
+func file_gavine_account_proto_init() {
+	if File_gavine_account_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_dapplink_account_proto_rawDesc), len(file_dapplink_account_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_gavine_account_proto_rawDesc), len(file_gavine_account_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   53,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_dapplink_account_proto_goTypes,
-		DependencyIndexes: file_dapplink_account_proto_depIdxs,
-		EnumInfos:         file_dapplink_account_proto_enumTypes,
-		MessageInfos:      file_dapplink_account_proto_msgTypes,
+		GoTypes:           file_gavine_account_proto_goTypes,
+		DependencyIndexes: file_gavine_account_proto_depIdxs,
+		EnumInfos:         file_gavine_account_proto_enumTypes,
+		MessageInfos:      file_gavine_account_proto_msgTypes,
 	}.Build()
-	File_dapplink_account_proto = out.File
-	file_dapplink_account_proto_goTypes = nil
-	file_dapplink_account_proto_depIdxs = nil
+	File_gavine_account_proto = out.File
+	file_gavine_account_proto_goTypes = nil
+	file_gavine_account_proto_depIdxs = nil
 }

@@ -4,7 +4,7 @@
 
 ### 1.1. 克隆项目
 ```
-git clone git@github.com:dapplink-labs/wallet-sign-go.git
+git clone git@github.com:Gavine-Gao/wallet-sign-go.git
 ```
 
 ### 1.2.项目构建
@@ -30,7 +30,7 @@ source .env
 
 - 命令行参数
 ```
-guoshijiang@guoshijiangdeMacBook-Pro wallet-sign-go % ./signature
+gavine@gavinedeMacBook-Pro wallet-sign-go % ./signature
 NAME:
    signature - A new cli application
 
@@ -63,7 +63,7 @@ GLOBAL OPTIONS:
 
 ### 1.1. 克隆项目
 ```
-git clone git@github.com:dapplink-labs/wallet-chain-account.git
+git clone git@github.com:Gavine-Gao/wallet-chain-account.git
 ```
 
 ### 1.2.项目构建
@@ -150,7 +150,7 @@ wallet_node:
 
 ### 1.1. 克隆项目
 ```
-git clone git@github.com:dapplink-labs/multichain-sync-account.git
+git clone git@github.com:Gavine-Gao/multichain-sync-account.git
 ```
 
 ### 1.2.项目构建
@@ -181,12 +181,12 @@ export WALLET_SLAVE_DB_ENABLE=false
 export WALLET_API_CACHE_ENABLE=false
 export WALLET_MASTER_DB_HOST="127.0.0.1"
 export WALLET_MASTER_DB_PORT=5432
-export WALLET_MASTER_DB_USER="guoshijiang"
+export WALLET_MASTER_DB_USER="gavine"
 export WALLET_MASTER_DB_PASSWORD=""
 export WALLET_MASTER_DB_NAME="multichain"
 export WALLET_SLAVE_DB_HOST="127.0.0.1"
 export WALLET_SLAVE_DB_PORT=5432
-export WALLET_SLAVE_DB_USER="guoshijiang"
+export WALLET_SLAVE_DB_USER="gavine"
 export WALLET_SLAVE_DB_PASSWORD=""
 export WALLET_SLAVE_DB_NAME="multichain"
 export WALLET_API_CACHE_LIST_SIZE=100000
